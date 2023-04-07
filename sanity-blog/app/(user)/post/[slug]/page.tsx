@@ -2,6 +2,8 @@ import {client} from "@/lib/sanity.client";
 import {groq} from "next-sanity";
 import Image from "next/image";
 import urlFor from "@/lib/urlFor";
+import {PortableText} from "@portabletext/react";
+import {RichTextComponents} from "@/components/RichTextComponents";
 
 type Props = {
   params: {
@@ -9,6 +11,18 @@ type Props = {
   };
 };
 
+export async function generateStaticParams() {
+  const query = groq`*[_type=='post']
+    {
+    slug
+    }`;
+
+  const slugs: Post[] = await client.fetch(query);
+  const slugRoutes = slugs.map((slug) => slug.slug.current);
+  return slugRoutes.map((slug) => ({
+    slug,
+  }));
+}
 async function Post({params: {slug}}: Props) {
   const query = groq`*[_type =='post' && slug.current ==$slug][0]
   {
@@ -57,7 +71,7 @@ async function Post({params: {slug}}: Props) {
               </div>
               <div>
                 <h2 className="italic pt-10">{post.description}</h2>
-                <div>
+                <div className="flex- items-center justify-end mt-auto space-x-2">
                   {post.categories.map((category) => (
                     <p
                       className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-semibold mt-4"
@@ -70,6 +84,7 @@ async function Post({params: {slug}}: Props) {
             </section>
           </div>
         </section>
+        <PortableText value={post.body} components={RichTextComponents} />
       </article>
     </div>
   );
