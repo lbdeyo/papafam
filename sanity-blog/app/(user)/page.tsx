@@ -13,7 +13,7 @@ const query = groq`*[_type=='post'] {
    categories[]->
  } | order(_createdAt desc)
 `;
-
+export const revalidate = 60; //revalidate every 60 seconds
 export default async function IndexPage() {
   if (previewData()) {
     return (

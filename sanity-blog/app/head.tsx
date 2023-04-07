@@ -5,7 +5,6 @@ export default function Head() {
     <>
       <title>L.B. Deyo, Designer</title>
       <meta content="width=device-width, initial-scale=1" name="viewpoert" />
-      <link rel="stylesheet" href="/favicon.ico" />
     </>
   );
 }
