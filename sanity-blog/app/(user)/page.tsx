@@ -1,7 +1,7 @@
 import {previewData} from "next/headers";
 import PreviewSuspense from "../../components/PreviewSuspense";
 import BlogList from "../../components/BlogList";
-import PreviewBlogList from "../../components/PreviewBlogList";
+import PreviewBlogList from "../../components/PreviewBloglist";
 import {client} from "../../lib/sanity.client";
 import {groq} from "next-sanity";
 
