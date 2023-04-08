@@ -12,8 +12,8 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 export default defineConfig({
   basePath: "/studio",
-  name: "PAPAFAM_Content_Studio",
-  title: "PAPAFAM Content Studio",
+  name: "lbdeyo_Content_Studio",
+  title: "lbdeyo Content Studio",
 
   projectId,
   dataset,

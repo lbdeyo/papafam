@@ -34,8 +34,8 @@ async function Post({params: {slug}}: Props) {
   const post: Post = await client.fetch(query, {slug});
   return (
     <div>
-      <article className="px-10 pb-28">
-        <section className="space-y-2  border border-[#F7AB0A] text-white">
+      <article className="px-10 pb-28 mt-24">
+        <section className="space-y-2  border border-[#C000FF] text-white">
           <div className="relative min-h-56 flex flex-col md:flex-row justify-between ">
             <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
               <Image
@@ -45,7 +45,7 @@ async function Post({params: {slug}}: Props) {
                 fill
               />
             </div>
-            <section className="p-5 bg-[#F7AB0A] w-full">
+            <section className="p-5 bg-[#C000FF] w-full">
               <div className="flex flex-col md:flex-row justify-between gay-y-5">
                 <div>
                   <h1 className="text-4xl font-extrabold">{post.title}</h1>
