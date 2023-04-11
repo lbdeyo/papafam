@@ -36,7 +36,7 @@ async function Post({params: {slug}}: Props) {
 
   return (
     <div>
-      <article className="px-10 pb-28 mt-24 max-w-6xl  mx-auto">
+      <article className="px-10 pb-28 mt-24 max-w-4xl  mx-auto">
         <div className="flex flex-col md:flex-row justify-between space-y-0">
           <div className="mb-5">
             <h1 className="text-4xl   mb-0 pb-0 ">{post.title}</h1>

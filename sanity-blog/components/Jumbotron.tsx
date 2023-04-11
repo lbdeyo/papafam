@@ -3,7 +3,7 @@ import React from "react";
 
 function Jumbotron() {
   return (
-    <section className="mx-10 mb-10  mt-24 bg-left-top    bg-no-repeat bg-cover bg-blend-screen  dark:bg-blend-multiply max-w-2xl  ">
+    <section className="mx-10 mb-10  mt-24  max-w-5xl  ">
       <div className="  max-w-screen-2xl ">
         <div>
           <h1 className="text-4xl md:text-5xl  mb-0 pb-0 ">
@@ -16,23 +16,31 @@ function Jumbotron() {
           <p
             className=" text-justify first-line:uppercase first-line:tracking-widest
   first-letter:text-6xl  
-  first-letter:mr-3 first-letter:float-left">
-            Throughout my career, I've been a multimedia creator, specializing
-            in crafting visually stunning and engaging digital experiences.
-            Everything I create, whether in code or in design, I create at the
-            service of a single objective: To tell stories. I want to tell
-            yours. With a keen eye for design and mastery of cutting-edge
-            technologies, I bring your ideas to life through a range of media,
-            including:
+  first-letter:mr-3 first-letter:float-left lg:columns-2  gap-6">
+            Web design and development. Motion graphics and video. Print. Social
+            Media. L.B. Deyo has created work for major clients like Ford Motor
+            Company, Jane magazine, Cisco Systems, Universal Studios, The Plaza
+            Hotel, and Calvin Klein. Now it&apos;s time to tell your story.
           </p>
-          <ul className="mb-6 mt-3 list-disc pl-4 md:columns-2  gap-16 ">
+          <ul className="mb-6 mt-3  list-disc pl-4 lg:columns-2 font-bold text-slate-200  gap-6 ">
             <li>
               <Link href="/about"> Print and digital design</Link>
             </li>
-            <li>Coding with modern standards-based technologies</li>
-            <li>Video and motion graphics</li>
-            <li>Sound editing</li>
-            <li>Custom illustration</li>
+            <li>
+              <Link href="/about">
+                {" "}
+                Coding with modern standards-based technologies
+              </Link>
+            </li>
+            <li>
+              <Link href="/about"> Video and motion graphics</Link>
+            </li>
+            <li>
+              <Link href="/about"> Sound editing</Link>
+            </li>
+            <li>
+              <Link href="/about"> Custom illustration</Link>
+            </li>
           </ul>
           <Link
             href="/contact"
