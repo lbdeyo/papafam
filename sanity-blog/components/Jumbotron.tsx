@@ -15,7 +15,7 @@ function Jumbotron() {
           </p>
           <p
             className=" text-justify first-line:uppercase first-line:tracking-widest
-  first-letter:text-6xl  first-letter:text-white
+  first-letter:text-6xl  
   first-letter:mr-3 first-letter:float-left">
             Throughout my career, I've been a multimedia creator, specializing
             in crafting visually stunning and engaging digital experiences.
