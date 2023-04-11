@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Jost:ital,wght@0,400;0,600;1,400;1,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Barlow+Semi+Condensed:ital,wght@0,100;0,400;0,600;1,100;1,400;1,600&family=Bebas+Neue&family=Big+Shoulders+Display&family=Bungee+Shade&family=Cabin:ital,wght@0,400;0,700;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Nova+Round&family=Questrial&family=Rubik+Vinyl&family=Tourney:wght@300;400&family=Zilla+Slab+Highlight:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -87,8 +87,13 @@
 
 html,
 body {
-  font-family: "Jost", serif;
-  font-size: 18px;
+  /* font-family: "Barlow Semi Condensed", sans-serif; */
+  /* font-family: "EB Garamond", serif; */
+  font-family: "Barlow Semi Condensed", sans-serif;
+
+  font-weight: 100;
+
+  font-size: 21px;
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -118,17 +123,34 @@ a:hover {
   }
 }
 
-.logoType {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 36px;
-  letter-spacing: 1px;
+h1 {
+  text-transform: uppercase;
+  /* font-family: "Bebas Neue", cursive; */
+  /* font-family: "Tourney", cursive; */
+  /* font-family: "Rubik Vinyl", cursive; */
+  /* font-family: "Questrial", sans-serif;
+   */
+  /* font-family: "Bungee Shade", cursive; */
+  /* font-family: "Big Shoulders Display", cursive; */
+  /* font-family: "Bebas Neue", cursive; */
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 400;
 }
 
-h1 {
-  font-family: "Bebas Neue", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 500;
-  /* color: rgb(141, 141, 142); */
-  font-size: 96px;
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

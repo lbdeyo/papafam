@@ -14,8 +14,14 @@ interface Post extends Base {
   slug: Slug;
   title: string;
   description: string;
+  youtube: string;
 }
 
+interface YouTube extends Base {
+  title: string;
+  renderDefault: Function;
+  url: url;
+}
 interface Author extends Base {
   bio: Block[];
   image: Image;

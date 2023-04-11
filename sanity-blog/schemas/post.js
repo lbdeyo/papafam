@@ -46,6 +46,11 @@ export default defineType({
       of: [{type: "reference", to: {type: "category"}}],
     }),
     defineField({
+      name: "youtube",
+      title: "YouTube",
+      type: "string",
+    }),
+    defineField({
       name: "publishedAt",
       title: "Published at",
       type: "datetime",
