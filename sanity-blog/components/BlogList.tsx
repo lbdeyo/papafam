@@ -10,17 +10,18 @@ type Props = {
 
 export default function BlogList({posts}: Props) {
   return (
-    <div className="max-w-4xl  mx-auto">
-      {/* start jumbotron */}
-      <Jumbotron />
-      {/* end jumbotron */}
+    <div className="max-w-4xl  mx-auto  fade-in-2">
+      <div className="fade-in-2">
+        <Jumbotron />
+      </div>
+
       <div className="max-w-4xl pl-10 pb-4 ">
-        <h1 className="text-3xl">Portfolio</h1>
+        <h1 className="text-3xl fade-in-4">Portfolio</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16 pb-24">
         {posts.map((post) => (
           <ClientSideRoute route={`/post/${post.slug.current}`} key={post._id}>
-            <span className="flex flex-col  group border-slate-500 border-opacity-25 cursor-pointer  hover:shadow-[0_35px_60px_-8px_rgba(0,0,0,0.4)] ">
+            <span className="flex flex-col  group border-slate-500 fade-in-4  border-opacity-25 cursor-pointer  hover:shadow-[0_35px_60px_-8px_rgba(0,0,0,0.4)] ">
               <div className="relative w-full h-80 ">
                 <Image
                   className="object-cover object-left lg:object-center border-black rounded-t-[20px]"

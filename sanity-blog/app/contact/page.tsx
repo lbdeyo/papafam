@@ -3,7 +3,7 @@ import "@tailwindcss/forms";
 
 function page() {
   return (
-    <section className="mb-10  mt-24  mx-auto px-10  max-w-2xl  ">
+    <section className="mb-10  mt-24  mx-auto px-10  max-w-2xl fade-in-2  ">
       <h1 className="text-4xl pb-3 ">Contact L.B. Deyo</h1>
       <p className="mb-5">What story do you want to tell?</p>
       <form
@@ -46,7 +46,7 @@ function page() {
           placeholder="Write your message here"
           required></textarea>
         <button
-          className="text-white bg-[#C000FF] hover:bg-[#A100FF] focus:ring-4 focus:ring-blue-300 hover:text-white font-bold rounded-lg text-sm px-5 py-2.5  focus:outline-none dark:focus:ring-blue-800"
+          className="text-white bg-[#C000FF] hover:brightness-200  focus:ring-4 focus:ring-blue-300 hover:text-white font-bold rounded-lg text-sm px-5 py-2.5  focus:outline-none dark:focus:ring-blue-800"
           type="submit">
           SEND
         </button>

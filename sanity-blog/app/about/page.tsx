@@ -36,7 +36,7 @@ async function About({params: {slug = "editorial-maps"}}: Props) {
   const post: Post = await client.fetch(query, {slug});
 
   return (
-    <section className="mb-10  mt-24  mx-auto px-10  dark:bg-blend-multiply max-w-4xl  ">
+    <section className="mb-10  mt-24  mx-auto px-10  dark:bg-blend-multiply max-w-4xl fade-in-2  ">
       <div className="  max-w-screen-2xl ">
         <div>
           <h1 className="text-4xl md:text-5xl  mb-0 pb-0 ">About L.B. Deyo</h1>
@@ -98,7 +98,7 @@ first-letter:mr-3 first-letter:float-left">
               </div>
               <Link
                 href="/contact"
-                className="text-white bg-[#C000FF] hover:bg-[#A100FF] focus:ring-4 focus:ring-blue-300 hover:text-white font-medium rounded-lg text-sm px-5 py-2.5 mr-2  focus:outline-none dark:focus:ring-blue-800">
+                className="text-white bg-[#C000FF] hover:brightness-200 focus:ring-4 focus:ring-blue-300 hover:text-white font-medium rounded-lg text-sm px-5 py-2.5 mr-2  focus:outline-none dark:focus:ring-blue-800">
                 LET&apos;S TELL YOUR STORY
               </Link>
             </div>

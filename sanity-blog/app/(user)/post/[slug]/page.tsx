@@ -35,7 +35,7 @@ async function Post({params: {slug}}: Props) {
   const post: Post = await client.fetch(query, {slug});
 
   return (
-    <div>
+    <div className="fade-in-2">
       <article className="px-10 pb-28 mt-24 max-w-4xl  mx-auto">
         <div className="flex flex-col md:flex-row justify-between space-y-0">
           <div className="mb-5">

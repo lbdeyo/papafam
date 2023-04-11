@@ -3,7 +3,7 @@ import React from "react";
 
 function Jumbotron() {
   return (
-    <section className="mx-10 mb-10  mt-24  max-w-5xl  ">
+    <section className="mx-10 mb-10  mt-24  max-w-5xl fade-in-2  ">
       <div className="  max-w-screen-2xl ">
         <div>
           <h1 className="text-4xl md:text-5xl  mb-0 pb-0 ">
@@ -47,7 +47,7 @@ function Jumbotron() {
           </ul>
           <Link
             href="/contact"
-            className="text-white bg-[#C000FF] hover:bg-[#A100FF] focus:ring-4 focus:ring-blue-300 hover:text-white font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none dark:focus:ring-blue-800">
+            className="text-white bg-[#C000FF] hover:brightness-200  focus:ring-4 focus:ring-blue-300 hover:text-white font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none dark:focus:ring-blue-800">
             GET IN TOUCH
           </Link>
         </div>
