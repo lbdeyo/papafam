@@ -54,7 +54,7 @@ async function About({params: {slug = "editorial-maps"}}: Props) {
                 Hybrid developer/designer
               </p>
               <p
-                className=" text-justify first-line:uppercase first-line:tracking-widest
+                className=" md:text-justify first-line:uppercase md:first-line:tracking-widest
 first-letter:text-6xl  
 first-letter:mr-3 first-letter:float-left">
                 Throughout his career, L.B. Deyo has been a multimedia creator,

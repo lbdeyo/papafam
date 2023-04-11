@@ -14,11 +14,13 @@ export default function BlogList({posts}: Props) {
       {/* start jumbotron */}
       <Jumbotron />
       {/* end jumbotron */}
-
+      <div className="max-w-4xl pl-10 pb-4 ">
+        <h1 className="text-3xl">Portfolio</h1>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16 pb-24">
         {posts.map((post) => (
           <ClientSideRoute route={`/post/${post.slug.current}`} key={post._id}>
-            <div className="flex flex-col  group border-slate-500 border-opacity-25 cursor-pointer  hover:shadow-[0_35px_60px_-8px_rgba(0,0,0,0.4)] ">
+            <span className="flex flex-col  group border-slate-500 border-opacity-25 cursor-pointer  hover:shadow-[0_35px_60px_-8px_rgba(0,0,0,0.4)] ">
               <div className="relative w-full h-80 ">
                 <Image
                   className="object-cover object-left lg:object-center border-black rounded-t-[20px]"
@@ -35,7 +37,7 @@ export default function BlogList({posts}: Props) {
                   </p>
                 </div>
               </div>
-            </div>
+            </span>
           </ClientSideRoute>
         ))}
       </div>
