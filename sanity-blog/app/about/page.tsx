@@ -66,12 +66,12 @@ first-letter:mr-3 first-letter:float-left">
                 ideas to life through a range of media, including:
               </p>
               <div className="my-4">
-                <h2 className="text-xl mt-3">Print and digital design</h2>
+                <h2 className="text-2xl mt-3">Print and digital design</h2>
                 <blockquote>
                   Bringing advanced knowledge of typography and layout. Expert
                   in tools like Photoshop, Illustrator and InDesign.
                 </blockquote>
-                <h2 className="text-xl mt-3">
+                <h2 className="text-2xl mt-3">
                   Coding with modern standards-based technologies
                 </h2>
                 <blockquote>
@@ -79,18 +79,18 @@ first-letter:mr-3 first-letter:float-left">
                   sites that can be securely maintained by non-programmers. L.B.
                   Deyo built this site and can build yours.
                 </blockquote>
-                <h2 className="text-xl mt-3">Video and motion graphics</h2>
+                <h2 className="text-2xl mt-3">Video and motion graphics</h2>
                 <blockquote>
                   Combining a passion for animation and cinema with skills in
                   photography, editing, and proficiency in Adobe Premiere and
                   Adobe After Effects.
                 </blockquote>
-                <h2 className="text-xl mt-3">Sound editing</h2>
+                <h2 className="text-2xl mt-3">Sound editing</h2>
                 <blockquote>
                   L.B. Deyo is a power user of Logic Pro X, and can offer sound
                   mixing and design for your videos or other projects.
                 </blockquote>
-                <h2 className="text-xl mt-3">Custom illustration</h2>
+                <h2 className="text-2xl mt-3">Custom illustration</h2>
                 <blockquote>
                   Creating illustrations in Blender, Illustrator, Photoshop, and
                   Adobe Animate.
@@ -98,9 +98,10 @@ first-letter:mr-3 first-letter:float-left">
               </div>
               <Link
                 href="/contact"
-                className="text-white bg-[#C000FF] hover:brightness-200 focus:ring-4 focus:ring-blue-300 hover:text-white font-medium rounded-lg text-sm px-5 py-2.5 mr-2  focus:outline-none dark:focus:ring-blue-800">
+                className="text-white bg-[#C000FF] hover:brightness-200 focus:ring-4 focus:ring-blue-300 hover:text-white font-medium rounded-lg text-sm px-5 py-2.5 mr-2 focus:outline-none dark:focus:ring-blue-800">
                 LET&apos;S TELL YOUR STORY
               </Link>
+              <div className="m-5"></div>
             </div>
           </div>
         </div>

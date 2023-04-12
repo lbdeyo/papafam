@@ -155,10 +155,6 @@ h1 {
   height: 100%;
 }
 
-blockquote {
-  margin-left: 25px;
-}
-
 .fade-in-2 {
   animation: fadeIn 1.5s;
 }
