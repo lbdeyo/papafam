@@ -9,7 +9,7 @@ function Jumbotron() {
           <h1 className="text-4xl md:text-5xl  mb-0 pb-0 ">
             Pro Design & Development
           </h1>
-          <div className="border-b-slate-400 dark:border-b-[#FFCC00] border-b-2 mt-2"></div>
+          <div className="border-b-slate-400 dark:border-b-[#ffae00] border-b-2 mt-2"></div>
           <p className="mt-2 md:mt-3 text-3xl mb-3">
             Creating multimedia, websites and more.
           </p>
@@ -47,7 +47,7 @@ function Jumbotron() {
           </ul>
           <Link
             href="/contact"
-            className="text-white bg-[#C000FF] hover:brightness-200  focus:ring-4 focus:ring-blue-300 hover:text-white font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none dark:focus:ring-blue-800">
+            className="text-black bg-[#ffae00] hover:bg-[#ffcc00]  focus:ring-4 focus:ring-blue-300 hover:text-black font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none dark:focus:ring-blue-800">
             GET IN TOUCH
           </Link>
         </div>

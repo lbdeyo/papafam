@@ -5,7 +5,7 @@ function Banner() {
         <h1 className="text-7xl mt-20 ">Design</h1>
         <h2 className="mt-5 md:mt-2">
           Welcome to{" "}
-          <span className=" decoration-4 decoration-[#C000FF]">
+          <span className=" decoration-4 decoration-[#ffae00]">
             Every Developer&#39;s
           </span>{" "}
           favorite blog in the Devosphere.

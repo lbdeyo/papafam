@@ -20,7 +20,7 @@ export default async function IndexPage() {
       <PreviewSuspense
         fallback={
           <div role="status">
-            <p className="text-center text-lg animate-pulse text-[#C000FF]">
+            <p className="text-center text-lg animate-pulse text-[#ffae00]">
               Loading Preview Data...
             </p>
           </div>
