@@ -24,7 +24,7 @@ export default function BlogList({posts}: Props) {
             <span className="flex flex-col  group border-slate-500 fade-in-4  border-opacity-25 cursor-pointer  hover:shadow-[0_35px_60px_-8px_rgba(0,0,0,0.4)] ">
               <div className="relative w-full h-80 ">
                 <Image
-                  className="object-cover object-left lg:object-center border-black rounded-t-[20px]"
+                  className="object-cover object-center lg:object-center border-black rounded-t-[20px]"
                   src={urlFor(post.mainImage).url()}
                   alt={post.author.name}
                   fill
