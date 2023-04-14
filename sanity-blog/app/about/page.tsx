@@ -12,6 +12,12 @@ type Props = {
   };
 };
 
+const query2 = groq`*[_type=='author'] {
+  ...,
+
+} 
+`;
+
 export const revalidate = 60; //revalidate every 60 seconds
 export async function generateStaticParams() {
   const query = groq`*[_type=='post']
@@ -19,6 +25,8 @@ export async function generateStaticParams() {
     slug
     }`;
 
+  const author: Author = await client.fetch(query2);
+  console.log("AUTHOR:" + JSON.stringify(author));
   const slugs: Post[] = await client.fetch(query);
   const slugRoutes = slugs.map((slug) => slug.slug.current);
   return slugRoutes.map((slug) => ({
