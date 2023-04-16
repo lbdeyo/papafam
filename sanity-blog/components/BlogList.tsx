@@ -14,7 +14,7 @@ export default function BlogList({posts}: Props) {
         <Jumbotron />
       </div>
       <div className="max-w-4xl pl-10 pb-4 ">
-        <h1 className="text-3xl fade-in-4">| Portfolio</h1>
+        <h1 className="text-3xl fade-in-4"> Portfolio</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16 pb-24">
         {posts.map((post) => (
