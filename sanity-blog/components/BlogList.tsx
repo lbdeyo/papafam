@@ -13,7 +13,6 @@ export default function BlogList({posts}: Props) {
       <div className="fade-in-2">
         <Jumbotron />
       </div>
-
       <div className="max-w-4xl pl-10 pb-4 ">
         <h1 className="text-3xl fade-in-4">| Portfolio</h1>
       </div>
