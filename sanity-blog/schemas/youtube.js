@@ -1,13 +1,13 @@
 // youtube.js
 export default {
-  name: "youtube",
+  name: "simpleImage",
   type: "object",
-  title: "YouTube Embed",
+  title: "simpleImage",
   fields: [
     {
       name: "url",
       type: "url",
-      title: "YouTube video URL",
+      title: "imageURL",
     },
   ],
 };

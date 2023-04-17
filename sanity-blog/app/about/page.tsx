@@ -44,7 +44,7 @@ async function About({params: {slug = "editorial-maps"}}: Props) {
           <div className="border-b-slate-400 border-dashed  dark:border-b-[#ffae00] dark:shadow-black dark:shadow-sm border-b-2 mt-2"></div>
           <div className=" lg:flex lg:flex-row lg:justify-between">
             <Image
-              className="mt-10 lg:mr-10 object-cover object-top-center mx-aut rounded-xl"
+              className="mt-10 lg:mr-10 object-cover object-top-center mx-auto rounded-xl"
               src={urlFor(post.author.image).url()}
               alt={post.author.name}
               width={450}
