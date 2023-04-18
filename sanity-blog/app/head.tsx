@@ -13,10 +13,11 @@ export default function Head() {
         property="og:description"
         content="Full service web design and full-stack web development"
       />
+      <meta property="og:title" content="L.B. Deyo, Designer" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:description"
-        content="Full service web design and full-stack web development"
+        content="Full service web design with full-stack web development"
       />
       <meta name="twitter:title" content="L.B. Deyo, Designer" />
       <meta
