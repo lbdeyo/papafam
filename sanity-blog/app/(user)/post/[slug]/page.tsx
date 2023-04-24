@@ -39,7 +39,7 @@ async function Post({params: {slug}}: Props) {
       <article className="px-10 pb-28 mt-24 max-w-4xl  mx-auto">
         <div className="flex flex-col md:flex-row justify-between space-y-0"></div>
 
-        <section className="space-y-5 text-white">
+        <section className="space-y-5 text-white  ">
           <div className="relative  flex flex-col md:flex-row justify-between ">
             <div className="absolute top-0 w-full h-full p-50 ">
               <Image
@@ -56,7 +56,7 @@ async function Post({params: {slug}}: Props) {
             </section>
           </div>
         </section>
-        <div className="my-5 max-w-2xl ">
+        <div className="my-5 max-w-2xl mx-auto ">
           <div className="mb-5">
             <h1 className="text-4xl   mb-0 pb-0 ">{post.title}</h1>
           </div>

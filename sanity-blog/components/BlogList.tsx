@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
 import urlFor from "../lib/urlFor";
 import ClientSideRoute from "./ClientSideRoute";
 import Jumbotron from "./Jumbotron";
+import {motion, stagger} from "framer-motion";
+import {client} from "@/lib/sanity.client";
 
 type Props = {
   posts: Post[];
@@ -17,9 +20,12 @@ export default function BlogList({posts}: Props) {
         <h1 className="text-3xl fade-in-4"> Portfolio</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16 pb-24">
-        {posts.map((post) => (
+        {posts.map((post, i) => (
           <ClientSideRoute route={`/post/${post.slug.current}`} key={post._id}>
-            <span className="flex flex-col  group border-slate-500 fade-in-4  border-opacity-25 cursor-pointer  hover:shadow-[0_35px_60px_-8px_rgba(0,0,0,0.4)] ">
+            <motion.div
+              animate={{scale: [0.6, 1.03, 1], opacity: [0, 1]}}
+              transition={{delay: 1 + 0.05 * i}}
+              className="flex flex-col opacity-0  group border-slate-500  border-opacity-25 cursor-pointer  hover:shadow-[0_35px_60px_-8px_rgba(0,0,0,0.4)] ">
               <div className="relative w-full h-80 ">
                 <Image
                   className="object-cover object-center lg:object-center border-black rounded-t-[20px]"
@@ -36,7 +42,7 @@ export default function BlogList({posts}: Props) {
                   </p>
                 </div>
               </div>
-            </span>
+            </motion.div>
           </ClientSideRoute>
         ))}
       </div>

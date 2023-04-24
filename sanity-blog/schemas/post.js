@@ -61,7 +61,13 @@ export default defineType({
       type: "blockContent",
     }),
   ],
-
+  orderings: [
+    {
+      title: "Published at, New",
+      name: "publishedAtAsc",
+      by: [{field: "publishedAt", direction: "asc"}],
+    },
+  ],
   preview: {
     select: {
       title: "title",
