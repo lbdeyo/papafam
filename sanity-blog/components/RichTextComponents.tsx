@@ -7,7 +7,7 @@ export const RichTextComponents = {
     image: ({value}: any) => {
       return (
         <div
-          className="relative w-full h-60 md:h-[1000px] my-3
+          className="relative w-full h-60 md:h-[900px] my-3
         bg-zinc-200 dark:bg-zinc-900  md:my-5 left-0 mx-auto ">
           <Image
             className=" object-contain"

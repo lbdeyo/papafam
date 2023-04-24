@@ -56,7 +56,7 @@ async function Post({params: {slug}}: Props) {
             </section>
           </div>
         </section>
-        <div className="my-5 max-w-2xl text-justify">
+        <div className="my-5 max-w-2xl text-justify ">
           <div className="mb-5">
             <h1 className="text-4xl   mb-0 pb-0 ">{post.title}</h1>
           </div>
