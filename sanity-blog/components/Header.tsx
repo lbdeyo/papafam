@@ -19,12 +19,12 @@ function Header() {
         <div className="flex flex-row mt-2">
           <Link
             href="/about"
-            className="px-4 py-3 text-xs uppercase    flex items-center rounded-full text-center">
+            className="px-4 py-3 text-xs text-white uppercase    flex items-center rounded-full text-center">
             About
           </Link>
           <Link
             href="/contact"
-            className="px-4 py-3 text-xs uppercase  flex items-center rounded-full text-center">
+            className="px-4 py-3 text-xs text-white uppercase  flex items-center rounded-full text-center">
             Contact
           </Link>
         </div>

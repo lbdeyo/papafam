@@ -4,7 +4,6 @@ import urlFor from "../lib/urlFor";
 import ClientSideRoute from "./ClientSideRoute";
 import Jumbotron from "./Jumbotron";
 import {motion, stagger} from "framer-motion";
-import {client} from "@/lib/sanity.client";
 
 type Props = {
   posts: Post[];

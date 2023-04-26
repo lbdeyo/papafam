@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import {Typewriter} from "react-simple-typewriter";
 
 function Jumbotron() {
   return (
@@ -7,7 +7,14 @@ function Jumbotron() {
       <div className="  max-w-screen-2xl ">
         <div>
           <h1 className="text-4xl md:text-5xl  mb-0 pb-0   ">
-            Pro Design & Development
+            <Typewriter
+              words={["Pro design and development"]}
+              cursor
+              cursorStyle="_"
+              typeSpeed={50}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
           </h1>
           <div className="border-b-slate-400 border-dashed  dark:border-b-[#ffae00] dark:shadow-black dark:shadow-sm border-b-2 mt-2"></div>
           <p className="mt-2 md:mt-3 text-3xl mb-3">
