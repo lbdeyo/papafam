@@ -13,7 +13,6 @@ export const RichTextComponents = {
             className=" object-contain"
             src={urlFor(value).url()}
             alt="Blog Post Image"
-            fill
           />
         </div>
       );
