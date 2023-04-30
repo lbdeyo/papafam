@@ -16,7 +16,7 @@ function Jumbotron() {
               delaySpeed={1000}
             />
           </h1>
-          <div className="border-b-slate-400 border-dashed  dark:border-b-[#ffae00] dark:shadow-black dark:shadow-sm border-b-2 mt-2"></div>
+          <div className="border-b-slate-400   dark:border-b-zinc-700 dark:shadow-black dark:shadow-sm border-b mt-2"></div>
           <p className="mt-2 md:mt-3 text-3xl mb-3">
             Creating multimedia, websites and more.
           </p>
@@ -30,9 +30,9 @@ function Jumbotron() {
             Hotel, and Calvin Klein. All these clients had stories to tell about
             their products and services. Now it&apos;s time to tell your story.
           </p>
-          <div className="border-b-slate-300 dark:border-zinc-700 border-b-2 my-5"></div>
+          <div className="border-b-slate-400 dark:border-zinc-700 border-b my-5"></div>
           <h1 className="text-3xl">Services</h1>
-          <ul className="mb-6 mt-3  list-disc pl-4 lg:columns-2  darK:text-slate-200  gap-6 ">
+          <ul className="mb-6 mt-3  list-disc pl-4 lg:columns-2  dark:text-slate-200  gap-6 ">
             <li>
               <Link href="/about"> Print and digital design</Link>
             </li>
