@@ -4,6 +4,7 @@ import urlFor from "../lib/urlFor";
 import ClientSideRoute from "./ClientSideRoute";
 import Jumbotron from "./Jumbotron";
 import {motion} from "framer-motion";
+import Spotlight from "./Spotlight";
 
 type Props = {
   posts: Post[];
@@ -15,6 +16,7 @@ export default function BlogList({posts}: Props) {
       <div className="fade-in-2">
         <Jumbotron />
       </div>
+      <Spotlight />
       <div className="max-w-4xl pl-10 pb-4 ">
         <h1 className="text-3xl fade-in-4"> Portfolio</h1>
       </div>

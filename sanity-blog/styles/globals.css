@@ -180,3 +180,34 @@ h1 {
     opacity: 1;
   }
 }
+
+#spot {
+  background: linear-gradient(to right, aquamarine, mediumpurple);
+  height: 500px;
+  aspect-ratio: 1;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+
+  z-index: 0;
+  translate: -50% -50%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    scale: 1 1.5;
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#spot {
+  animation: rotate 20s infinite;
+  filter: blur(200px);
+  pointer-events: none;
+}
