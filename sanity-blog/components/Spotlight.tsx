@@ -23,7 +23,7 @@ const Spotlight = () => {
   }, [spotRef]);
 
   return (
-    <div id="spot" className="opacity-70 dark:opacity-40" ref={spotRef}></div>
+    <div id="spot" className="opacity-70 dark:opacity-30" ref={spotRef}></div>
   );
 };
 
