@@ -41,7 +41,7 @@ async function About({params: {slug = "editorial-maps"}}: Props) {
       <div className="  max-w-screen-2xl ">
         <div>
           <h1 className="text-4xl md:text-5xl  mb-0 pb-0 ">About L.B. Deyo</h1>
-          <div className="border-b-slate-400 border-dashed  dark:border-b-[#ffae00] dark:shadow-black dark:shadow-sm border-b-2 mt-2"></div>
+          <div className="border-b-slate-400   dark:border-b-zinc-700 dark:shadow-black dark:shadow-sm border-b mt-2"></div>
           <div className=" lg:flex lg:flex-row lg:justify-between">
             <Image
               className="mt-10 lg:mr-10 object-cover object-top-center mx-auto rounded-xl"
