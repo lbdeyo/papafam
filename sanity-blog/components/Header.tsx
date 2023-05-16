@@ -9,7 +9,7 @@ function Header() {
           <Link href="/">
             <Image
               className="brightness-50  hover:brightness-0 dark:hover:brightness-200 dark:brightness-100
-              headerLogo md:absolute"
+              "
               src={Logo}
               width={200}
               height={50}
