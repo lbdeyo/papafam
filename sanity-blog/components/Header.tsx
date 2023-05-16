@@ -8,7 +8,8 @@ function Header() {
         <div className="flex items-center pl-0 ml-0 space-x-0 md:space-x-1   pt-1 ">
           <Link href="/">
             <Image
-              className="brightness-50  hover:brightness-0 dark:hover:brightness-200 dark:brightness-100"
+              className="brightness-50  hover:brightness-0 dark:hover:brightness-200 dark:brightness-100
+              headerLogo md:absolute"
               src={Logo}
               width={200}
               height={50}
