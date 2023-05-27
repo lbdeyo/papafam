@@ -11,6 +11,8 @@ type Props = {
 };
 
 export default function BlogList({posts}: Props) {
+  console.log("Post 0:", posts[0]["priority"]);
+  posts.sort((a, b) => a.priority - b.priority);
   return (
     <div className="max-w-4xl  mx-auto  fade-in-2">
       <div className="fade-in-2">

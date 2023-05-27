@@ -56,6 +56,11 @@ export default defineType({
       type: "datetime",
     }),
     defineField({
+      name: "priority",
+      title: "Priority",
+      type: "number",
+    }),
+    defineField({
       name: "body",
       title: "Body",
       type: "blockContent",

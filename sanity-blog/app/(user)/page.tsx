@@ -1,4 +1,4 @@
-import {previewData} from "next/headers";
+import {draftMode} from "next/headers";
 import PreviewSuspense from "../../components/PreviewSuspense";
 import BlogList from "../../components/BlogList";
 import PreviewBlogList from "../../components/PreviewBloglist";
@@ -15,7 +15,7 @@ const query = groq`*[_type=='post'] {
 `;
 export const revalidate = 60; //revalidate every 60 seconds
 export default async function IndexPage() {
-  if (previewData()) {
+  if (draftMode()) {
     return (
       <PreviewSuspense
         fallback={
@@ -31,5 +31,6 @@ export default async function IndexPage() {
   }
 
   const posts = await client.fetch(query);
+
   return <BlogList posts={posts} />;
 }
