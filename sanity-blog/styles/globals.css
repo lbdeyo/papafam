@@ -211,3 +211,19 @@ h1 {
   filter: blur(200px);
   pointer-events: none;
 }
+
+.headerLogo {
+  animation: slideIn 0.5s;
+  transition-timing-function: ease-out;
+
+  top: 20px;
+}
+
+@keyframes slideIn {
+  from {
+    margin-left: -500px;
+  }
+  to {
+    margin-left: 0;
+  }
+}
