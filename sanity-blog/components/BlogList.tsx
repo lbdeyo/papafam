@@ -26,8 +26,6 @@ export default function BlogList({posts}: Props) {
         {posts.map((post, i) => (
           <ClientSideRoute route={`/post/${post.slug.current}`} key={post._id}>
             <motion.div
-              // animate={{scale: [0.6, 1.03, 1], opacity: [0, 1]}}
-              // transition={{delay: 1 + 0.05 * i}}
               initial={{scale: 0.6, opacity: 0}}
               whileInView={{scale: 1, opacity: 1}}
               className="flex flex-col opacity-0  group border-slate-500  border-opacity-25 cursor-pointer  hover:shadow-[0_35px_60px_-8px_rgba(0,0,0,0.4)] ">
