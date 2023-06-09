@@ -11,6 +11,8 @@
   "dependencies": {
     "@heroicons/react": "^2.0.17",
     "@portabletext/react": "^2.0.2",
+    "@react-three/drei": "^9.74.6",
+    "@react-three/fiber": "^8.13.0",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.0.0",
     "@tailwindcss/line-clamp": "^0.4.4",
@@ -37,6 +39,7 @@
     "sanity": "^3.11.1",
     "sanity-plugin-iframe-pane": "^2.3.0",
     "styled-components": "^5.2.0",
+    "three": "^0.153.0",
     "typescript": "5.0.3",
     "typewriter-effect": "^2.19.0"
   },

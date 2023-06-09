@@ -1,6 +1,9 @@
+"use client";
+import {Canvas} from "@react-three/fiber";
 import BlogList from "../../components/BlogList";
 import {client} from "../../lib/sanity.client";
 import {groq} from "next-sanity";
+import {StarField} from "@/components/StarField";
 
 const query = groq`*[_type=='post'] {
    ...,
@@ -12,5 +15,16 @@ export const revalidate = 60; //revalidate every 60 seconds
 export default async function IndexPage() {
   const posts = await client.fetch(query);
 
-  return <BlogList posts={posts} />;
+  return (
+    <div>
+      <div
+        id="threeCanvas"
+        className=" h-[500vh] w-full absolute left-0 top-10 -z-10 opacity-70  ">
+        <StarField />
+      </div>
+      <div className=" z-auto">
+        <BlogList posts={posts} />
+      </div>
+    </div>
+  );
 }

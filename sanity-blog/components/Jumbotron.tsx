@@ -1,10 +1,10 @@
 import Link from "next/link";
 import {Typewriter} from "react-simple-typewriter";
-import Image from "next/image";
+
 function Jumbotron() {
   return (
     <section className="mx-10 mb-10  mt-24  max-w-5xl fade-in-2   ">
-      <div className="  max-w-screen-2xl ">
+      <div className="  max-w-screen-2xl z-30 ">
         <div>
           <h1 className="text-4xl md:text-5xl  mb-0 pb-0   ">
             <Typewriter
@@ -17,10 +17,11 @@ function Jumbotron() {
             />
           </h1>
           <div className="border-b-slate-400   dark:border-b-zinc-700 dark:shadow-black dark:shadow-sm border-b mt-2"></div>
-
-          <p className="mt-2 md:mt-3 text-3xl mb-3">
-            Creating multimedia, websites and more.
-          </p>
+          <div className="flex flex-col md:flex-row">
+            <p className="mt-2 md:mt-3 text-3xl mb-3">
+              Creating multimedia, websites and more.
+            </p>
+          </div>
           <div className="flex flex-col md:flex-row">
             <p
               className=" md:text-justify first-line:uppercase md:first-line:tracking-widest
@@ -33,13 +34,14 @@ function Jumbotron() {
               stories to tell about their products and services. Now it&apos;s
               time to tell your story.
             </p>
-            <Image
+
+            {/* <Image
               src="/calipers.png"
               alt="calipers"
               className="ml-10 pr-10 md:-mt-5 hidden lg:flex"
               height={300}
               width={300}
-            />
+            />*/}
           </div>
           <div className="border-b-slate-400 dark:border-zinc-700 border-b my-5"></div>
           <h1 className="text-3xl">Services</h1>
