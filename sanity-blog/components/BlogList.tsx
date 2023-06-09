@@ -40,7 +40,7 @@ export default function BlogList({posts}: Props) {
               <div className="p-3 pb-5 pt-0">
                 <div className="mt-5 flex-1">
                   <p className="  text-lg font-bold">{post.title}</p>
-                  <p className="line-clamp-2 text-gray-500">
+                  <p className="line-clamp-2 dark:text-white">
                     {post.description}
                   </p>
                 </div>
