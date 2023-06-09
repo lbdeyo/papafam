@@ -13,7 +13,8 @@ import {
 export const StarField = () => {
   const allStars =
     useRef<THREE.Points<BufferGeometry, Material | Material[]>>(null);
-  const knot = useRef<THREE.Mesh>(null);
+  // const knot = useRef<THREE.Mesh>(null);
+  // const knot2 = useRef<THREE.Mesh>(null);
 
   useEffect(() => {
     document.body.onscroll = animate;
@@ -24,12 +25,15 @@ export const StarField = () => {
   }, []);
 
   function animate() {
-    if (allStars.current && knot.current) {
+    if (allStars.current) {
+      // && knot.current && knot2.current) {
       allStars.current.rotation.x = 0 - window.scrollY / 1000;
       allStars.current.rotation.y = 0 - window.scrollY / 5500;
 
-      knot.current.rotation.x = 0 - window.scrollY / 1000;
-      knot.current.rotation.y = 0 - window.scrollY / 5500;
+      // knot.current.rotation.x = 0 - window.scrollY / 700;
+      // knot.current.rotation.y = 0 - window.scrollY / 5500;
+      // knot2.current.rotation.x = 180 - window.scrollY / 700;
+      // knot2.current.rotation.y = 180 - window.scrollY / 5500;
     }
   }
 
@@ -38,10 +42,14 @@ export const StarField = () => {
       <Sparkles ref={allStars} count={5000} speed={0.1} size={1} scale={10} />
       {/* <ambientLight /> */}
       <pointLight intensity={1.5} position={[2, 5, 4]} />
-      <mesh ref={knot} position={[0, 1, -1]}>
-        <torusKnotGeometry args={[2.65, 0.4, 32, 64]} />
+      {/* <mesh ref={knot} position={[0, 1, -1]}>
+        <torusGeometry args={[2.75, 0.3, 32, 64]} />
         <meshPhongMaterial color={0x333333} />
       </mesh>
+      <mesh ref={knot2} position={[0, 1, -1]}>
+        <torusGeometry args={[1.25, 0.3, 32, 64]} />
+        <meshPhongMaterial color={0x333333} />
+      </mesh> */}
     </Canvas>
   );
 };
