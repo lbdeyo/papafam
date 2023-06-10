@@ -43,12 +43,12 @@ export const StarField = () => {
       <Cloud
         ref={theCloud}
         opacity={0.2}
-        depth={3}
-        width={4}
+        depth={10}
+        width={10}
         color="0x000000"
       />
       {/* <ambientLight /> */}
-      <pointLight intensity={1} position={[2, 5, 4]} />
+      <pointLight intensity={1.5} position={[2, 5, 4]} />
       {/* <mesh ref={knot} position={[0, 1, -1]}>
         <torusGeometry args={[2.75, 0.3, 32, 64]} />
         <meshPhongMaterial color={0x333333} />
