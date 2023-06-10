@@ -1,22 +1,13 @@
-import {Cloud, Sparkles, Stars} from "@react-three/drei";
-import {Canvas} from "@react-three/fiber";
+import {Cloud, Sparkles, Stars, useTexture} from "@react-three/drei";
+import {Canvas, useLoader} from "@react-three/fiber";
 import React, {useRef, useEffect} from "react";
-import {
-  BufferGeometry,
-  Material,
-  MeshLambertMaterial,
-  PointLight,
-  TextureLoader,
-  TorusGeometry,
-} from "three";
+import {BufferGeometry, Material} from "three";
 
 export const StarField = () => {
   const allStars =
     useRef<THREE.Points<BufferGeometry, Material | Material[]>>(null);
   const theCloud =
     useRef<THREE.Points<BufferGeometry, Material | Material[]>>(null);
-  // const knot = useRef<THREE.Mesh>(null);
-  // const knot2 = useRef<THREE.Mesh>(null);
 
   useEffect(() => {
     document.body.onscroll = animate;
@@ -44,6 +35,7 @@ export const StarField = () => {
         ref={theCloud}
         opacity={0.2}
         depth={10}
+        segments={60}
         width={10}
         color="0x000000"
       />
@@ -52,11 +44,7 @@ export const StarField = () => {
       {/* <mesh ref={knot} position={[0, 1, -1]}>
         <torusGeometry args={[2.75, 0.3, 32, 64]} />
         <meshPhongMaterial color={0x333333} />
-      </mesh>
-      <mesh ref={knot2} position={[0, 1, -1]}>
-        <torusGeometry args={[1.25, 0.3, 32, 64]} />
-        <meshPhongMaterial color={0x333333} />
-      </mesh> */}
+      </mesh>*/}
     </Canvas>
   );
 };
