@@ -46,7 +46,7 @@ function page() {
           placeholder="Write your message here"
           required></textarea>
         <button
-          className="text-black bg-[#ffae00] hover:bg-[#ffcc00]  focus:ring-4 focus:ring-blue-300 hover:text-black font-bold rounded-lg text-sm px-5 py-2.5  focus:outline-none dark:focus:ring-blue-800"
+          className="text-black bg-[#ffae00] hover:bg-[#ffcc00]  focus:ring-4  hover:text-black font-bold rounded-lg text-sm px-5 py-2.5  focus:outline-none focus:ring-blue-800"
           type="submit">
           SEND
         </button>

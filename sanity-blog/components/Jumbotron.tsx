@@ -16,7 +16,7 @@ function Jumbotron() {
               delaySpeed={1000}
             />
           </h1>
-          <div className="border-b-slate-400   dark:border-b-zinc-700 dark:shadow-black dark:shadow-sm border-b mt-2"></div>
+          <div className=" border-b-zinc-700 shadow-black shadow-sm border-b mt-2"></div>
           <div className="flex flex-col md:flex-row">
             <p className="mt-2 md:mt-3 text-3xl mb-3">
               Creating multimedia, websites and more.
@@ -43,9 +43,9 @@ function Jumbotron() {
               width={300}
             />*/}
           </div>
-          <div className="border-b-slate-400 dark:border-zinc-700 border-b my-5"></div>
+          <div className=" border-zinc-700 border-b my-5"></div>
           <h1 className="text-3xl">Services</h1>
-          <ul className="mb-6 mt-3  list-disc pl-4 lg:columns-2  dark:text-slate-200  gap-6 ">
+          <ul className="mb-6 mt-3  list-disc pl-4 lg:columns-2  text-slate-200  gap-6 ">
             <li>
               <Link href="/about"> Print and digital design</Link>
             </li>
@@ -67,7 +67,7 @@ function Jumbotron() {
           </ul>
           <Link
             href="/contact"
-            className="text-black bg-[#ffae00] hover:bg-[#ffcc00]  focus:ring-4 focus:ring-blue-300 hover:text-black font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none text-bold dark:focus:ring-blue-800">
+            className="text-black bg-[#ffae00] hover:bg-[#ffcc00]  focus:ring-4  hover:text-black font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none text-bold focus:ring-blue-800">
             GET IN TOUCH
           </Link>
         </div>

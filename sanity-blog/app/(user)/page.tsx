@@ -19,7 +19,7 @@ export default async function IndexPage() {
     <div>
       <div
         id="threeCanvas"
-        className="  w-full overflow-hidden absolute left-0 right-0 top-0 bottom-0 -z-10 opacity-100 dark:opacity-70 hidden lg:block  ">
+        className="  w-full overflow-hidden absolute left-0 right-0 top-0 bottom-0 -z-10 opacity-70 hidden lg:block  ">
         <StarField />
       </div>
       <div className=" z-auto">
