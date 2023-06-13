@@ -37,10 +37,6 @@ export const StarField = () => {
       />
       {/* <ambientLight /> */}
       <pointLight intensity={2.5} position={[2, 5, 4]} />
-      {/* <mesh ref={knot} position={[0, 1, -1]}>
-        <torusGeometry args={[2.75, 0.3, 32, 64]} />
-        <meshPhongMaterial color={0x333333} />
-      </mesh>*/}
     </Canvas>
   );
 };
