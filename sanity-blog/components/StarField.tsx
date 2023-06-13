@@ -19,12 +19,8 @@ export const StarField = () => {
 
   function animate() {
     if (allStars.current && theCloud.current) {
-      // && knot.current && knot2.current) {
       allStars.current.rotation.x = 0 - window.scrollY / 1000;
       allStars.current.rotation.y = 0 - window.scrollY / 5500;
-
-      // knot2.current.rotation.x = 180 - window.scrollY / 700;
-      // knot2.current.rotation.y = 180 - window.scrollY / 5500;
     }
   }
 
