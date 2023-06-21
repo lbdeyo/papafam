@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Abel&family=Barlow+Semi+Condensed:ital,wght@0,100;0,400;0,600;1,100;1,400;1,600&family=Bebas+Neue&family=Big+Shoulders+Display&family=Bungee+Shade&family=Cabin:ital,wght@0,400;0,700;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Nova+Round&family=Questrial&family=Rubik+Vinyl&family=Tourney:wght@300;400&family=Zilla+Slab+Highlight:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Libre+Bodoni:wght@700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -90,8 +93,7 @@ html,
 body {
   /* font-family: "Barlow Semi Condensed", sans-serif; */
   /* font-family: "EB Garamond", serif; */
-  font-family: "Barlow Semi Condensed", sans-serif;
-
+  font-family: "Raleway", sans-serif;
   font-weight: 100;
 
   font-size: 20px;
