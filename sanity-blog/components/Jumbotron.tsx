@@ -7,14 +7,7 @@ function Jumbotron() {
       <div className="  max-w-screen-2xl z-30 ">
         <div>
           <h1 className="text-3xl md:text-7xl  mb-0 pb-0   ">
-            <Typewriter
-              words={["Pro design and development"]}
-              cursor
-              cursorStyle="_"
-              typeSpeed={50}
-              deleteSpeed={50}
-              delaySpeed={1000}
-            />
+            Pro design and development
           </h1>
           <div className=" border-b-zinc-500 shadow-black shadow-sm border-b mt-2"></div>
           <div className="flex flex-col md:flex-row">
