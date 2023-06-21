@@ -6,7 +6,7 @@ function Jumbotron() {
     <section className="mx-10 mb-10  mt-24  max-w-5xl fade-in-2   ">
       <div className="  max-w-screen-2xl z-30 ">
         <div>
-          <h1 className="text-4xl md:text-5xl  mb-0 pb-0   ">
+          <h1 className="text-3xl md:text-7xl  mb-0 pb-0   ">
             <Typewriter
               words={["Pro design and development"]}
               cursor
@@ -16,9 +16,9 @@ function Jumbotron() {
               delaySpeed={1000}
             />
           </h1>
-          <div className=" border-b-zinc-700 shadow-black shadow-sm border-b mt-2"></div>
+          <div className=" border-b-zinc-500 shadow-black shadow-sm border-b mt-2"></div>
           <div className="flex flex-col md:flex-row">
-            <p className="mt-2 md:mt-3 text-3xl mb-3">
+            <p className="mt-2 md:mt-3 text-2xl mb-3">
               Creating multimedia, websites and more.
             </p>
           </div>
@@ -43,8 +43,8 @@ function Jumbotron() {
               width={300}
             />*/}
           </div>
-          <div className=" border-zinc-700 border-b my-5"></div>
-          <h1 className="text-3xl">Services</h1>
+          <div className=" border-b-zinc-500 shadow-black shadow-sm border-b my-5"></div>
+          <h1 className="text-2xl">Services</h1>
           <ul className="mb-6 mt-3  list-disc pl-4 lg:columns-2  text-slate-200  gap-6 ">
             <li>
               <Link href="/about"> Print and digital design</Link>
