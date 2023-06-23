@@ -3,7 +3,7 @@ import {Typewriter} from "react-simple-typewriter";
 
 function Jumbotron() {
   return (
-    <section className="mx-10 mb-10  mt-20  max-w-5xl fade-in-2   ">
+    <section className="mx-10 mb-10  mt-24  max-w-5xl fade-in-2   ">
       <div className="  max-w-screen-2xl z-30 ">
         <div>
           <h1 className="text-4xl md:text-6xl  mb-0 pb-0  shadow shadow-sm  ">
