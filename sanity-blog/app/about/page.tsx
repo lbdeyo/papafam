@@ -40,8 +40,13 @@ async function About({params: {slug = "editorial-maps"}}: Props) {
     <section className="mb-10  mt-24  mx-auto px-10   max-w-4xl fade-in-2  ">
       <div className="  max-w-screen-2xl ">
         <div>
-          <h1 className="text-4xl md:text-5xl  mb-0 pb-0 ">About L.B. Deyo</h1>
-          <div className="  border-b-[#ffae00]shadow-black shadow-sm border-b-2 mt-2"></div>
+          <span className="flex flex-row">
+            <h1 className="text-4xl md:text-7xl  mb-0 pb-0 light ">
+              About&nbsp;
+            </h1>
+            <h1 className="text-4xl md:text-7xl  mb-0 pb-0 "> L.B. Deyo</h1>
+          </span>
+          <div className=" border-b-zinc-500 shadow-black shadow-sm border-b mt-2"></div>
           <div className=" lg:flex lg:flex-row lg:justify-between">
             <Image
               className="mt-10 lg:mr-10 object-cover object-top-center mx-auto rounded-xl"
@@ -51,12 +56,12 @@ async function About({params: {slug = "editorial-maps"}}: Props) {
               height={450}
             />
             <div className="mt-6">
-              <p className="mt-2 md:mt-3 text-3xl mb-3">
+              <h1 className="mt-2 md:mt-3 text-3xl mb-3">
                 Hybrid developer/designer
-              </p>
+              </h1>
               <p
                 className=" md:text-justify first-line:uppercase md:first-line:tracking-widest
-first-letter:text-6xl  
+first-letter:text-6xl   
 first-letter:mr-3 first-letter:float-left">
                 Throughout his career, L.B. Deyo has been a multimedia creator,
                 specializing in crafting visually stunning and engaging digital
@@ -67,31 +72,31 @@ first-letter:mr-3 first-letter:float-left">
                 ideas to life through a range of media, including:
               </p>
               <div className="my-4">
-                <h2 className="text-2xl mt-3">Print and digital design</h2>
+                <h1 className="text-xl mt-3">Print and digital design</h1>
                 <blockquote>
                   Bringing advanced knowledge of typography and layout. Expert
                   in tools like Photoshop, Illustrator and InDesign.
                 </blockquote>
-                <h2 className="text-2xl mt-3">
+                <h1 className="text-xl mt-3">
                   Coding with modern standards-based technologies
-                </h2>
+                </h1>
                 <blockquote>
                   Developing in React and Next, using headless CMS, to create
                   sites that can be securely maintained by non-programmers. L.B.
                   Deyo built this site and can build yours.
                 </blockquote>
-                <h2 className="text-2xl mt-3">Video and motion graphics</h2>
+                <h1 className="text-xl mt-3">Video and motion graphics</h1>
                 <blockquote>
                   Combining a passion for animation and cinema with skills in
                   photography, editing, and proficiency in Adobe Premiere and
                   Adobe After Effects.
                 </blockquote>
-                <h2 className="text-2xl mt-3">Sound editing</h2>
+                <h1 className="text-xl mt-3">Sound editing</h1>
                 <blockquote>
                   L.B. Deyo is a power user of Logic Pro X, and can offer sound
                   mixing and design for your videos or other projects.
                 </blockquote>
-                <h2 className="text-2xl mt-3">Custom illustration</h2>
+                <h1 className="text-xl mt-3">Custom illustration</h1>
                 <blockquote>
                   Creating illustrations in Blender, Illustrator, Photoshop, and
                   Adobe Animate.
@@ -100,7 +105,7 @@ first-letter:mr-3 first-letter:float-left">
               <Link
                 href="/contact"
                 className="text-black bg-[#ffae00] hover:bg-[#ffcc00] focus:ring-4 hover:text-black font-medium rounded-lg text-sm px-5 py-2.5 text-bold mr-2 focus:outline-none focus:ring-blue-800">
-                LET&apos;S TELL YOUR STORY
+                CONTACT
               </Link>
               <div className="m-5"></div>
             </div>

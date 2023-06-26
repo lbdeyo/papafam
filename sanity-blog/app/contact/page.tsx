@@ -3,8 +3,11 @@ import "@tailwindcss/forms";
 
 function page() {
   return (
-    <section className="mb-10  mt-24  mx-auto px-10  max-w-2xl fade-in-2 h-screen  ">
-      <h1 className="text-4xl pb-3 ">Contact L.B. Deyo</h1>
+    <section className="mb-10  mt-24  mx-auto px-10  max-w-4xl fade-in-2 h-screen  ">
+      <span className="flex flex-row">
+        <h1 className="text-4xl md:text-7xl pb-3 light">Contact&nbsp;</h1>
+        <h1 className="text-4xl md:text-7xl pb-3 ">L.B. Deyo</h1>
+      </span>
       <p className="mb-5">What story do you want to tell?</p>
       <form
         action="https://formsubmit.co/lbdeyo@gmail.com"
