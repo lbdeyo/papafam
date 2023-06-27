@@ -6,7 +6,7 @@ function Jumbotron() {
     <section className="mx-10 mb-10  mt-24  max-w-5xl fade-in-2   ">
       <div className="  max-w-screen-2xl z-30 ">
         <div>
-          <h1 className="text-5xl md:text-7xl  mb-0 pb-0   light ">
+          <h1 className="text-5xl md:text-7xl  mb-0 pb-0 tracking-widest   light ">
             Pro-Strength
           </h1>
           <h1 className="text-5xl md:text-6xl  mb-0 pb-0    ">
