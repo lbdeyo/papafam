@@ -6,10 +6,10 @@ function Jumbotron() {
     <section className="mx-10 mb-10  mt-24  max-w-5xl fade-in-2   ">
       <div className="  max-w-screen-2xl z-30 ">
         <div>
-          <h1 className="text-5xl md:text-7xl  mb-0 pb-0 drop-shadow-sm   drop-shadow-black light ">
+          <h1 className="text-5xl md:text-7xl  mb-0 pb-0   light ">
             Pro-Strength
           </h1>
-          <h1 className="text-5xl md:text-6xl  mb-0 pb-0  shadow shadow-sm  ">
+          <h1 className="text-5xl md:text-6xl  mb-0 pb-0    ">
             <span className="light"></span> Design and Development
           </h1>
           <div className=" border-b-zinc-500 shadow-black shadow-sm border-b mt-2"></div>
@@ -22,7 +22,7 @@ function Jumbotron() {
             <p
               className=" md:text-justify first-line:uppercase md:first-line:tracking-widest
   first-letter:text-6xl  
-  first-letter:mr-3 first-letter:float-left   gap-6  drop-shadow-md drop-shadow-black ">
+  first-letter:mr-3 first-letter:float-left   gap-6  ">
               Web design and development. Motion graphics and video. Print.
               Social Media. L.B. Deyo has created work for major clients like
               Ford Motor Company, Jane magazine, Cisco Systems, Universal

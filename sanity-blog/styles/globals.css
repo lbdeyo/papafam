@@ -142,6 +142,7 @@ h1 {
   font-style: normal;
   filter: var(--primary-glow);
   color: lightblue;
+  text-shadow: 2px 2px 1px black;
 
   /* font-family: "Barlow Semi Condensed", sans-serif;
   font-weight: 700; */
