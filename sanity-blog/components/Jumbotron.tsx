@@ -12,7 +12,7 @@ function Jumbotron() {
           <h1 className="text-5xl md:text-6xl  mb-0 pb-0    ">
             <span className="light"></span> Design and Development
           </h1>
-          <div className=" border-b-zinc-500 shadow-black shadow-sm border-b mt-2"></div>
+          <div className=" border-b-[#ffae00] shadow-black shadow-sm border-b mt-2"></div>
           <div className="flex flex-col md:flex-row">
             <p className="mt-2 md:mt-3 text-2xl mb-3">
               Creating multimedia, websites and more.
