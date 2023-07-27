@@ -1,9 +1,9 @@
 "use client";
-import {Canvas} from "@react-three/fiber";
+// import {Canvas} from "@react-three/fiber";
 import BlogList from "../../components/BlogList";
 import {client} from "../../lib/sanity.client";
 import {groq} from "next-sanity";
-import {StarField} from "@/components/StarField";
+// import {StarField} from "@/components/StarField";
 
 const query = groq`*[_type=='post'] {
    ...,
@@ -17,11 +17,11 @@ export default async function IndexPage() {
 
   return (
     <div>
-      <div
+      {/* <div
         id="threeCanvas"
         className="  w-full overflow-hidden absolute left-0 right-0 top-0 bottom-0 -z-10 opacity-70 hidden lg:block  ">
         <StarField />
-      </div>
+      </div> */}
       <div className=" z-auto">
         <BlogList posts={posts} />
       </div>
