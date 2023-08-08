@@ -4,6 +4,7 @@ import BlogList from "../../components/BlogList";
 import {client} from "../../lib/sanity.client";
 import {groq} from "next-sanity";
 // import {StarField} from "@/components/StarField";
+// adding a comment
 
 const query = groq`*[_type=='post'] {
    ...,
