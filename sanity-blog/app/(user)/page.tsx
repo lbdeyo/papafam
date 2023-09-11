@@ -8,7 +8,7 @@ import {groq} from "next-sanity";
 
 const query = groq`*[_type=='post'] {
    ...,
-   author->,
+   author->, 
    categories[]->
  } | order(_createdAt desc)
 `;
