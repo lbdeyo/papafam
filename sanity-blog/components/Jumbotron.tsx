@@ -60,11 +60,14 @@ function Jumbotron() {
             <li>
               <Link href="/about"> Custom illustration</Link>
             </li>
+            <li>
+              <Link href="/about"> Copywriting</Link>
+            </li>
           </ul>
           <Link
             href="/contact"
             className="text-black bg-[#ffae00] hover:bg-[#ffcc00]  focus:ring-4  hover:text-black font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none text-bold focus:ring-blue-800">
-            GET IN TOUCH
+            GET IN&nbsp;TOUCH
           </Link>
         </div>
       </div>
