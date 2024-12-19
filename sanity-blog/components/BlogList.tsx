@@ -11,7 +11,6 @@ type Props = {
 };
 
 export default function BlogList({posts}: Props) {
-  console.log("Post 0:", posts[0]["priority"]);
   posts.sort((a, b) => a.priority - b.priority);
   return (
     <div className="max-w-4xl  mx-auto fade-in-2">
@@ -26,9 +25,11 @@ export default function BlogList({posts}: Props) {
         {posts.map((post, i) => (
           <ClientSideRoute route={`/post/${post.slug.current}`} key={post._id}>
             <motion.div
-              initial={{scale: 0.1, opacity: 0}}
-              whileInView={{scale: 1, opacity: 1}}
-              className="flex flex-col opacity-0  group border-slate-500  border-opacity-25 cursor-pointer  hover:shadow-[0_35px_60px_-8px_rgba(0,0,0,0.4)] ">
+              initial={{opacity: 0, scale: 0.9}}
+              animate={{opacity: 1, scale: 1}}
+              transition={{duration: 0.3, delay: i * 0.1}}
+              whileHover={{scale: 1.02}}
+              className="flex flex-col group border-slate-500 border-opacity-25 cursor-pointer hover:shadow-[0_35px_60px_-8px_rgba(0,0,0,0.4)]">
               <div className="relative w-full h-80 ">
                 <Image
                   className="object-cover object-center lg:object-center border-black rounded-t-[20px]"
