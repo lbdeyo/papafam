@@ -37,17 +37,14 @@ async function About({params: {slug = "editorial-maps"}}: Props) {
   const post: Post = await client.fetch(query, {slug});
 
   return (
-    <section className="mb-10  mt-24  mx-auto px-10   max-w-4xl fade-in-2  ">
-      <div className="  max-w-screen-2xl ">
+    <div className="min-h-screen bg-[#1c1c1c] relative flex flex-col items-center">
+      <section className="w-full max-w-screen-lg mx-auto px-10 mb-10 mt-24 fade-in-2">
         <div>
-          <span className="flex flex-row">
-            <h1 className="text-4xl md:text-7xl  mb-0 pb-0 light ">
-              About&nbsp;
-            </h1>
-            <h1 className="text-4xl md:text-7xl  mb-0 pb-0 "> L.B. Deyo</h1>
-          </span>
-          <div className=" border-b-zinc-500 shadow-black shadow-sm border-b mt-2"></div>
-          <div className=" lg:flex lg:flex-row lg:justify-between">
+          <h1 className="text-5xl md:text-6xl mb-0 pb-0 text-[#FF0479]">
+            About L.B. Deyo
+          </h1>
+          <div className="border-b-[#ffae00] shadow-black shadow-sm border-b mt-2"></div>
+          <div className="lg:flex lg:flex-row lg:justify-between">
             <Image
               className="mt-10 lg:mr-10 object-cover object-top-center mx-auto rounded-xl"
               src={urlFor(post.author.image).url()}
@@ -60,7 +57,7 @@ async function About({params: {slug = "editorial-maps"}}: Props) {
                 Hybrid developer/designer
               </h1>
               <p
-                className=" md:text-justify first-line:uppercase md:first-line:tracking-widest
+                className="md:text-justify first-line:uppercase md:first-line:tracking-widest
 first-letter:text-6xl   
 first-letter:mr-3 first-letter:float-left">
                 Throughout his career, L.B. Deyo has been a multimedia creator,
@@ -111,8 +108,8 @@ first-letter:mr-3 first-letter:float-left">
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 

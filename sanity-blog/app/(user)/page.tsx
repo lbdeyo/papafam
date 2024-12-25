@@ -1,30 +1,30 @@
-"use client";
-// import {Canvas} from "@react-three/fiber";
-import BlogList from "../../components/BlogList";
-import {client} from "../../lib/sanity.client";
+import BackgroundOrchid from "@/components/BackgroundOrchid";
+import BlogList from "@/components/BlogList";
+import Jumbotron from "@/components/Jumbotron";
 import {groq} from "next-sanity";
-// import {StarField} from "@/components/StarField";
-// adding a comment
+import {client} from "@/lib/sanity.client";
 
-const query = groq`*[_type=='post'] {
-   ...,
-   author->, 
-   categories[]->
- } | order(_createdAt desc)
+export const revalidate = 30;
+
+const query = groq`
+  *[_type=='post'] {
+    ...,
+    author->,
+    categories[]->
+  } | order(priority asc)
 `;
-export const revalidate = 60; //revalidate every 60 seconds
-export default async function IndexPage() {
+
+export default async function TestPage() {
   const posts = await client.fetch(query);
 
   return (
-    <div>
-      {/* <div
-        id="threeCanvas"
-        className="  w-full overflow-hidden absolute left-0 right-0 top-0 bottom-0 -z-10 opacity-70 hidden lg:block  ">
-        <StarField />
-      </div> */}
-      <div className=" z-auto">
-        <BlogList posts={posts} />
+    <div className="min-h-screen bg-[#1c1c1c] relative">
+      <div className="relative flex flex-col items-center">
+        <BackgroundOrchid />
+        <div className="w-full max-w-screen-lg">
+          <Jumbotron />
+          <BlogList posts={posts} />
+        </div>
       </div>
     </div>
   );

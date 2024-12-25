@@ -11,7 +11,7 @@ type Props = {
   };
 };
 
-export const revalidate = 60; //revalidate every 60 seconds
+export const revalidate = 60;
 export async function generateStaticParams() {
   const query = groq`*[_type=='post']
     {
@@ -36,29 +36,21 @@ async function Post({params: {slug}}: Props) {
 
   return (
     <div className="fade-in-2">
-      <article className="px-10 pb-28 mt-24 max-w-4xl  mx-auto">
-        <div className="flex flex-col md:flex-row justify-between space-y-0"></div>
-
-        <section className="space-y-5 text-white  ">
-          <div className="relative  flex flex-col md:flex-row justify-between ">
-            <div className="absolute top-0 w-full h-full p-50 ">
-              <Image
-                className="object-cover object-top-center mx-auto mb-5 rounded-xl"
-                src={urlFor(post.mainImage).url()}
-                alt={post.author.name}
-                fill
-              />
-            </div>
-            <section className="p-5 mt-5  w-full">
-              <div>
-                <h1 className="italic pt-20 mt-10">{post.description}</h1>
-              </div>
-            </section>
+      <article className="px-10 pb-28 mt-24 max-w-4xl mx-auto">
+        <section className="space-y-5 text-white">
+          <div className="relative min-h-[600px]">
+            <Image
+              className="object-cover object-center mx-auto rounded-xl"
+              src={urlFor(post.mainImage).url()}
+              alt={post.author.name}
+              fill
+              priority
+            />
           </div>
         </section>
-        <div className="my-5 max-w-2xl mx-auto ">
+        <div className="my-5 max-w-2xl mx-auto">
           <div className="mb-5">
-            <h1 className="text-4xl   mb-0 pb-0 ">{post.title}</h1>
+            <h1 className="text-4xl mb-0 pb-0">{post.title}</h1>
           </div>
           <PortableText value={post.body} components={RichTextComponents} />
         </div>
@@ -75,7 +67,6 @@ async function Post({params: {slug}}: Props) {
           </div>
         )}
       </article>
-      <div></div>
     </div>
   );
 }
