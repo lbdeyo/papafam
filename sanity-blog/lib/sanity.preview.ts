@@ -1,11 +1,7 @@
 "use client";
 
-import {definePreview} from "next-sanity/preview";
 import {projectId, dataset} from "./sanity.client";
-
-function onPublicAccessOnly() {
-  throw new Error("Unable to load preview; you're not logged in.");
-}
+import {createClient} from "next-sanity";
 
 if (!projectId || !dataset) {
   throw new Error(
@@ -13,8 +9,14 @@ if (!projectId || !dataset) {
   );
 }
 
-export const usePreview = definePreview({
+export const previewClient = createClient({
   projectId,
   dataset,
-  onPublicAccessOnly,
+  apiVersion: "2023-12-25",
+  useCdn: false,
+  perspective: "previewDrafts",
+  stega: {
+    enabled: true,
+    studioUrl: "/studio",
+  },
 });

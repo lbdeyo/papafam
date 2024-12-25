@@ -1,12 +1,8 @@
-export {NextStudioHead} from "next-sanity/studio/head";
-
-import {link} from "fs";
-import {NextStudioHead} from "next-sanity/studio/head";
-
 export default function CustomStudioHead() {
   return (
     <>
-      <NextStudioHead favicons={false} />
+      <meta name="robots" content="noindex" />
+      <meta name="referrer" content="same-origin" />
       <link
         rel="icon"
         type="image/png"
