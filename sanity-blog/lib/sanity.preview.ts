@@ -14,9 +14,5 @@ export const previewClient = createClient({
   dataset,
   apiVersion: "2023-12-25",
   useCdn: false,
-  perspective: "previewDrafts",
-  stega: {
-    enabled: true,
-    studioUrl: "/studio",
-  },
+  token: process.env.SANITY_API_TOKEN,
 });

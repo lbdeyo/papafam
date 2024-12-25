@@ -1,5 +1,4 @@
 import {defineConfig, isDev} from "sanity";
-import {visionTool} from "@sanity/vision";
 import {deskTool} from "sanity/desk";
 import {schemaTypes} from "./schemas";
 import {myTheme} from "./theme";
@@ -22,7 +21,6 @@ export default defineConfig({
     deskTool({
       defaultDocumentNode: getDefaultDocumentNode,
     }),
-    visionTool(),
   ],
 
   schema: {
