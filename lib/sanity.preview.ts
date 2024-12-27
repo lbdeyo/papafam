@@ -1,18 +1,18 @@
 "use client";
 
-import {projectId, dataset} from "./sanity.client";
+import {projectId, dataset, apiVersion} from "./sanity.client";
 import {createClient} from "next-sanity";
 
-if (!projectId || !dataset) {
+if (!projectId || !dataset || !apiVersion) {
   throw new Error(
-    "Missing projectId or dataset. Check your sanity.json or .env"
+    "Missing projectId, dataset, or apiVersion. Check your .env.local or sanity.client.ts"
   );
 }
 
 export const previewClient = createClient({
   projectId,
   dataset,
-  apiVersion: "2023-12-25",
+  apiVersion,
   useCdn: false,
-  token: process.env.SANITY_API_TOKEN,
+  token: process.env.SANITY_TOKEN,
 });
