@@ -60,9 +60,10 @@ interface Span {
   text: string;
 }
 
-interface Category extends Base {
-  description: string;
-  title: string;
+type Category = string;
+
+interface BlogListFilterProps {
+  onFilterChange: (category: Category) => void;
 }
 
 interface MainImage {
