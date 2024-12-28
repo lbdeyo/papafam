@@ -4,6 +4,7 @@ import {previewClient} from "../lib/sanity.preview";
 import BlogList from "./BlogList";
 import {groq} from "next-sanity";
 import {useEffect, useState} from "react";
+import type {Post} from "../typings";
 
 type Props = {
   query: string;
