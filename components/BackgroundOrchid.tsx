@@ -20,7 +20,7 @@ export default function BackgroundOrchid() {
           alt="Decorative orchid"
           width={500}
           height={900}
-          className="absolute -right-16 top-16 animate-fade-in opacity-0"
+          className="absolute -right-16 top-8 animate-fade-in opacity-0"
           style={{
             animationDelay: "0.5s",
             animationFillMode: "forwards",

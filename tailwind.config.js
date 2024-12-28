@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        orchid: "940px",
+        orchid: "935px",
       },
       keyframes: {
         "fade-in": {
