@@ -1,5 +1,6 @@
 "use client";
 import {useState} from "react";
+import type {Post} from "../typings";
 import Image from "next/image";
 import urlFor from "../lib/urlFor";
 import ClientSideRoute from "./ClientSideRoute";
@@ -12,12 +13,17 @@ type Props = {
 };
 
 export default function BlogList({posts}: Props) {
-  const [currentCategory, setCurrentCategory] = useState<Category>("All");
+  console.log("First post:", posts[0]);
+  const [currentCategory, setCurrentCategory] = useState<string>("All");
 
   const filteredPosts = posts.filter(
     (post) =>
       currentCategory === "All" ||
-      post.categories?.some((cat) => cat.title === currentCategory)
+      post.categories?.some((category) =>
+        typeof category === "string"
+          ? category === currentCategory
+          : category.title === currentCategory
+      )
   );
 
   posts.sort((a, b) => a.priority - b.priority);

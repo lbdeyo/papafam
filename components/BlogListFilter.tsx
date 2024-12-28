@@ -1,8 +1,10 @@
 "use client";
+import {Dispatch, SetStateAction} from "react";
+import type {Category, Post} from "../typings";
 
 interface BlogListFilterProps {
-  currentCategory: Category;
-  setCurrentCategory: (category: Category) => void;
+  currentCategory: string;
+  setCurrentCategory: Dispatch<SetStateAction<string>>;
   posts: Post[];
 }
 
@@ -13,27 +15,35 @@ export function BlogListFilter({
 }: BlogListFilterProps) {
   const uniqueCategories = [
     "All",
-    "Web Development",
-    "Illustration",
-    "Advertising Graphic Design",
-    "Editorial Graphic Design",
-    "Video",
-    "Motion Graphics",
-    "AI Generated Art",
+    ...Array.from(
+      new Set(
+        posts.flatMap(
+          (post) =>
+            post.categories?.map((category: Category) =>
+              typeof category === "string" ? category : category.title
+            ) || []
+        )
+      )
+    ),
   ] as Category[];
 
   return (
     <div className="flex flex-wrap gap-4 mb-8">
-      {uniqueCategories.map((category) => (
+      {uniqueCategories.map((category: Category) => (
         <button
-          key={category}
-          onClick={() => setCurrentCategory(category)}
+          key={typeof category === "string" ? category : category.title}
+          onClick={() =>
+            setCurrentCategory(
+              typeof category === "string" ? category : category.title
+            )
+          }
           className={`text-sm transition-colors ${
-            currentCategory === category
+            currentCategory ===
+            (typeof category === "string" ? category : category.title)
               ? "text-[#ffae00]"
               : "text-white hover:text-[#ffae00]"
           }`}>
-          {category}
+          {typeof category === "string" ? category : category.title}
         </button>
       ))}
     </div>

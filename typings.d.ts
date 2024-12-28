@@ -1,3 +1,5 @@
+import {Dispatch, SetStateAction} from "react";
+
 type Base = {
   _createdAt: string;
   _id: string;
@@ -60,10 +62,17 @@ interface Span {
   text: string;
 }
 
-type Category = string;
+type Category =
+  | string
+  | ({
+      _id: string;
+      title: string;
+    } & Base);
 
 interface BlogListFilterProps {
-  onFilterChange: (category: Category) => void;
+  currentCategory: string;
+  setCurrentCategory: Dispatch<SetStateAction<string>>;
+  posts: Post[];
 }
 
 interface MainImage {
