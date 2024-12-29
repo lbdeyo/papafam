@@ -13,7 +13,6 @@ type Props = {
 };
 
 export default function BlogList({posts}: Props) {
-  console.log("First post:", posts[0]);
   const [currentCategory, setCurrentCategory] = useState<string>("All");
 
   const filteredPosts = posts.filter(
