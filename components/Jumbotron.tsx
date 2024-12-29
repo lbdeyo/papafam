@@ -59,7 +59,7 @@ function Jumbotron() {
               </span>
               <span className="opacity-75">
                 , including HTML, CSS, JavaScript, React, Next.js, Tailwind CSS,
-                and more. UI/UX.
+                and more. Expertise in UI/UX.
               </span>
             </p>
 
