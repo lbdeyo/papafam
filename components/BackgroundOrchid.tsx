@@ -16,7 +16,7 @@ export default function BackgroundOrchid() {
     <div className="absolute top-0 right-0 w-full pointer-events-none hidden orchid:block">
       <div className="relative mx-auto max-w-screen-lg">
         <Image
-          src="/orchid.png"
+          src="/orchid-bg.png"
           alt="Decorative orchid"
           width={500}
           height={900}
