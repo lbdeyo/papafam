@@ -26,16 +26,7 @@ export async function generateStaticParams() {
     slug,
   }));
 }
-async function About({params: {slug = "editorial-maps"}}: Props) {
-  const query = groq`*[_type =='post' && slug.current ==$slug][0]
-  {
-    ..., 
-    author->,
-
-  }`;
-
-  const post: Post = await client.fetch(query, {slug});
-
+async function About({params: {slug}}: Props) {
   return (
     <div className="min-h-screen bg-[#1c1c1c] relative flex flex-col items-center">
       <section className="w-full max-w-screen-lg mx-auto px-10 mb-10 mt-24 fade-in-2">
@@ -47,10 +38,11 @@ async function About({params: {slug = "editorial-maps"}}: Props) {
           <div className="lg:flex lg:flex-row lg:justify-between">
             <Image
               className="mt-10 lg:mr-10 object-cover object-top-center mx-auto rounded-xl"
-              src={urlFor(post.author.image).url()}
-              alt={post.author.name}
+              src="/lb-portrait-chrysler.jpg"
+              alt="L.B. Deyo"
               width={450}
               height={450}
+              priority
             />
             <div className="mt-6">
               <h1 className="mt-2 md:mt-3 text-3xl mb-3">
