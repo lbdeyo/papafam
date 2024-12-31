@@ -1,7 +1,7 @@
 import {client} from "@/lib/sanity.client";
 import {groq} from "next-sanity";
 import Image from "next/image";
-import urlFor from "@/lib/urlFor";
+import type {Post} from "@/typings";
 import Link from "next/link";
 
 // ABOUT PAGE
