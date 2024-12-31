@@ -3,7 +3,7 @@ import Link from "next/link";
 import Logo from "../lbdeyo-designer-logo.svg";
 function Header() {
   return (
-    <header className="  navigationBar  font-bold px-5 md:px-10 pt-1  pb-2   shadow-lg   fixed z-50 top-0 left-0 right-0 bg-opacity-90    bg-[#262629] border-zinc-700">
+    <header className="  navigationBar  font-bold px-5 md:px-10 pt-1  pb-2   shadow-lg   fixed z-50 top-0 left-0 right-0 bg-opacity-90    bg-[#0e161e] border-zinc-700">
       <div className="flex max-w-screen-lg  mx-auto items-center justify-between space-x-0 md:space-x-2 ">
         <div className="flex items-center pl-0 ml-0 space-x-0 md:space-x-1   pt-1 ">
           <Link href="/">
