@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import {Typewriter} from "react-simple-typewriter";
+import { Typewriter } from "react-simple-typewriter";
 
 function Jumbotron() {
   return (
     <section className="mx-10 mb-10 fade-in-2">
       <div className="max-w-lg z-30">
-        <div className="mt-24">
+        <div className="mt-10">
           <h1 className="text-5xl md:text-6xl mb-0 pb-0 text-[#FF0479]">
             Pro-Strength
           </h1>
