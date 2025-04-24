@@ -13,8 +13,8 @@ export default function BackgroundOrchid() {
   if (!mounted) return null;
 
   return (
-    <div className="w-full pointer-events-none hidden orchid:block">
-      <div className="relative mx-auto max-w-screen-lg">
+    <div className="w-full hidden pointer-events-none hidden orchid:block">
+      <div className="relative hidden mx-auto max-w-screen-lg">
         <Image
           src="/orchid-bg.png"
           alt="Decorative orchid"
