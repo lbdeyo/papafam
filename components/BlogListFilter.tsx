@@ -1,6 +1,6 @@
 "use client";
-import {Dispatch, SetStateAction} from "react";
-import type {Category, Post} from "../typings";
+import { Dispatch, SetStateAction } from "react";
+import type { Category, Post } from "../typings";
 
 interface BlogListFilterProps {
   currentCategory: string;
@@ -37,12 +37,11 @@ export function BlogListFilter({
               typeof category === "string" ? category : category.title
             )
           }
-          className={`text-sm transition-colors ${
-            currentCategory ===
-            (typeof category === "string" ? category : category.title)
+          className={`portfolio-filter-btn text-sm transition-colors ${currentCategory ===
+              (typeof category === "string" ? category : category.title)
               ? "text-[#ffae00]"
               : "text-white hover:text-[#ffae00]"
-          }`}>
+            }`}>
           {typeof category === "string" ? category : category.title}
         </button>
       ))}

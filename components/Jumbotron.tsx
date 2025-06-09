@@ -85,7 +85,7 @@ function Jumbotron() {
 
           <Link
             href="/contact"
-            className="text-black bg-[#ffae00] hover:bg-[#ffcc00] focus:ring-4 hover:text-black font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none text-bold focus:ring-blue-800">
+            className="industry-btn text-black bg-[#ffae00] hover:bg-[#ffcc00] focus:ring-4 hover:text-black font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none text-bold focus:ring-blue-800">
             GET IN&nbsp;TOUCH
           </Link>
         </div>
