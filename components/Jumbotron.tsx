@@ -7,8 +7,8 @@ function Jumbotron() {
     <section className="mx-10 mb-10 fade-in-2">
       <div className="max-w-4xl z-30">
         <div className="mt-10">
-          <h1 className="text-5xl md:text-6xl mb-0 pb-0 text-[#FF0479]">
-            Pro-Strength Design and Development
+          <h1 className="text-6xl md:text-6xl mb-0 pb-0 text-[#f79b08]">
+            Professional-Strength Design & Development
           </h1>
 
           <div className="border-b-[#ffae00] shadow-black shadow-sm border-b mt-2"></div>

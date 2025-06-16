@@ -123,16 +123,16 @@ a:hover {
 }
 
 h1 {
-  text-transform: uppercase;
-  font-family: "industry-inc-detail", sans-serif;
-  font-weight: 400;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
   font-style: normal;
+  color: #f79b08;
   filter: var(--primary-glow);
   text-shadow: 2px 2px 1px black;
 }
 
 h1.light {
-  font-family: "industry-inc-detail", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   font-weight: 400;
 }
 
