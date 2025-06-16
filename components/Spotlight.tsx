@@ -1,4 +1,4 @@
-import {useRef, useEffect} from "react";
+import { useRef, useEffect } from "react";
 
 const Spotlight = () => {
   const spotRef = useRef<HTMLDivElement>(null);
@@ -7,7 +7,7 @@ const Spotlight = () => {
     const spot = spotRef.current;
     if (spot) {
       window.onpointermove = (event) => {
-        const {clientX, clientY} = event;
+        const { clientX, clientY } = event;
         spot.animate(
           {
             left: `${clientX}px`,
