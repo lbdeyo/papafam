@@ -1,4 +1,4 @@
-import { title } from "process";
+import Script from "next/script";
 
 export default function Head() {
   return (
@@ -25,8 +25,13 @@ export default function Head() {
         content="https://cdn.sanity.io/images/bx055f5z/production/93408f373027dd95b7a5d4a9f162ec1a08984459-2344x1300.png?w=2000&fit=max&auto=format&dpr=2"
       />
       {/* Google tag (gtag.js) */}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-6C26PZMYX6"></script>
-      <script
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-6C26PZMYX6"
+        strategy="afterInteractive"
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
