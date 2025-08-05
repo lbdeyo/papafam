@@ -1,7 +1,7 @@
 import BackgroundOrchid from "@/components/BackgroundOrchid";
 import BlogList from "@/components/BlogList";
 import Jumbotron from "@/components/Jumbotron";
-import ShowreelVideo from "@/components/ShowreelVideo";
+// import ShowreelVideo from "@/components/ShowreelVideo";
 import { groq } from "next-sanity";
 import { client } from "@/lib/sanity.client";
 
@@ -22,9 +22,9 @@ export default async function TestPage() {
     <div className="min-h-screen relative">
       {/* Content */}
       <div className="relative flex flex-col items-center">
-        <ShowreelVideo />
+        {/* <ShowreelVideo /> */}
         <div className="relative w-full">
-          <BackgroundOrchid />
+          {/* <BackgroundOrchid /> */}
           <div className="w-full max-w-screen-lg mx-auto">
             <Jumbotron />
             <BlogList posts={posts} />

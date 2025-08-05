@@ -4,7 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 function Jumbotron() {
   return (
-    <section className="mx-10 mb-10 fade-in-2">
+    <section className="mx-10 mb-10 fade-in-2 mt-20">
       <div className="max-w-4xl z-30">
         <div className="mt-10">
           <h1 className="text-6xl md:text-6xl mb-0 pb-0 text-[#f79b08]">
@@ -54,7 +54,7 @@ function Jumbotron() {
               </span>
               <span className="opacity-75">
                 , including HTML, CSS, JavaScript, React, Next.js, Tailwind CSS,
-                and more. Expertise in UI/UX.
+                and more. Expertise in UI/UX. Meta Certified in JavaScript, HTML & CSS, and Advanced React. Google Certified in Google Ads.
               </span>
             </p>
 
