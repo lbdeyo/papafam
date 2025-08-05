@@ -15,7 +15,10 @@ type Props = {
 export default function BlogList({ posts }: Props) {
   const [currentCategory, setCurrentCategory] = useState<string>("All");
 
-  const filteredPosts = posts.filter(
+  // Ensure posts is always an array
+  const safePosts = Array.isArray(posts) ? posts : [];
+
+  const filteredPosts = safePosts.filter(
     (post) =>
       currentCategory === "All" ||
       post.categories?.some((category) =>
@@ -25,7 +28,7 @@ export default function BlogList({ posts }: Props) {
       )
   );
 
-  posts.sort((a, b) => a.priority - b.priority);
+  safePosts.sort((a, b) => a.priority - b.priority);
 
   return (
     <div className="w-full fade-in-2">
@@ -35,37 +38,43 @@ export default function BlogList({ posts }: Props) {
         <BlogListFilter
           currentCategory={currentCategory}
           setCurrentCategory={setCurrentCategory}
-          posts={posts}
+          posts={safePosts}
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 gap-y-4 pb-24 mx-10">
-        {filteredPosts.map((post, i) => (
-          <ClientSideRoute route={`/post/${post.slug.current}`} key={post._id}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3 }}
-              whileHover={{ scale: 1.02 }}
-              className="mb-4 flex flex-col group border-slate-500 border-opacity-25 cursor-pointer hover:shadow-[0_35px_60px_-8px_rgba(0,0,0,0.4)]">
-              <div className="relative w-full h-[220px]">
-                <Image
-                  className="object-cover rounded-t-md"
-                  src={urlFor(post.mainImage).url()}
-                  alt={post.author.name}
-                  fill
-                  style={{ objectPosition: "50% 50%" }}
-                />
-              </div>
-              <div className="p-3 pb-5 pt-0">
-                <div className="mt-5 flex-1">
-                  <p className="text-lg font-bold">{post.title}</p>
-                  <p className="line-clamp-2 text-white">{post.description}</p>
+        {filteredPosts.length > 0 ? (
+          filteredPosts.map((post, i) => (
+            <ClientSideRoute route={`/post/${post.slug.current}`} key={post._id}>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3 }}
+                whileHover={{ scale: 1.02 }}
+                className="mb-4 flex flex-col group border-slate-500 border-opacity-25 cursor-pointer hover:shadow-[0_35px_60px_-8px_rgba(0,0,0,0.4)]">
+                <div className="relative w-full h-[220px]">
+                  <Image
+                    className="object-cover rounded-t-md"
+                    src={urlFor(post.mainImage).url()}
+                    alt={post.author.name}
+                    fill
+                    style={{ objectPosition: "50% 50%" }}
+                  />
                 </div>
-              </div>
-            </motion.div>
-          </ClientSideRoute>
-        ))}
+                <div className="p-3 pb-5 pt-0">
+                  <div className="mt-5 flex-1">
+                    <p className="text-lg font-bold">{post.title}</p>
+                    <p className="line-clamp-2 text-white">{post.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            </ClientSideRoute>
+          ))
+        ) : (
+          <div className="col-span-full text-center py-10">
+            <p className="text-gray-400">No posts available at the moment.</p>
+          </div>
+        )}
       </div>
     </div>
   );

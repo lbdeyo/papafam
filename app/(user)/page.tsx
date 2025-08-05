@@ -16,7 +16,14 @@ const query = groq`
 `;
 
 export default async function TestPage() {
-  const posts = await client.fetch(query);
+  let posts = [];
+
+  try {
+    posts = await client.fetch(query);
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    // Continue with empty posts array if fetch fails
+  }
 
   return (
     <div className="min-h-screen relative">
