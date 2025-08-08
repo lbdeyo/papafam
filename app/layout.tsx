@@ -4,7 +4,7 @@ import Script from "next/script";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="font-sans">
+    <html lang="en">
       <head>
         {/* Google Analytics */}
         <Script
@@ -20,8 +20,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `}
         </Script>
       </head>
-      <body className="font-cormorant">
-        <nav className="bg-[#15232c]">{/* Navigation content */}</nav>
+      <body>
+        <nav className="bg-black">{/* Navigation content */}</nav>
         {children}
       </body>
     </html>
