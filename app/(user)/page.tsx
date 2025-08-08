@@ -1,4 +1,4 @@
-import BackgroundOrchid from "@/components/BackgroundOrchid";
+
 import BlogList from "@/components/BlogList";
 import Jumbotron from "@/components/Jumbotron";
 // import ShowreelVideo from "@/components/ShowreelVideo";
