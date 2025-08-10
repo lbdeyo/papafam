@@ -31,7 +31,7 @@ export default function PortfolioCard({
             >
                 {/* Fixed height; avoid inheriting full viewport height */}
                 <div
-                    className="relative w-full overflow-hidden min-h-[480px] md:min-h-[540px] lg:min-h-[630px]"
+                    className="relative w-full overflow-hidden h-[560px]"
                 >
                     {imageSrc ? (
                         <Image
