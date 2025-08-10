@@ -5,7 +5,7 @@ import Image from "next/image";
 import urlFor from "../lib/urlFor";
 import ClientSideRoute from "./ClientSideRoute";
 import { motion } from "framer-motion";
-import Spotlight from "./Spotlight";
+import PortfolioGrid from "./PortfolioGrid";
 import { BlogListFilter } from "./BlogListFilter";
 
 type Props = {
@@ -31,45 +31,26 @@ export default function BlogList({ posts }: Props) {
   safePosts.sort((a, b) => a.priority - b.priority);
 
   return (
-    <div className="w-full fade-in-2">
-      <Spotlight />
-      <div className="pb-4 mx-10">
-        <h1 className="text-3xl fade-in-4 z-10">Portfolio</h1>
+    <div id="portfolio" className="w-full fade-in-2 relative">
+      <div className="pb-4 mx-4 md:mx-0 relative">
+        <h1 className="text-3xl md:text-4xl font-semibold fade-in-4 z-10">Portfolio</h1>
         <BlogListFilter
           currentCategory={currentCategory}
           setCurrentCategory={setCurrentCategory}
           posts={safePosts}
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 gap-y-4 pb-24 mx-10">
+      <div className="mx-2 md:mx-0 relative">
         {filteredPosts.length > 0 ? (
-          filteredPosts.map((post, i) => (
-            <ClientSideRoute route={`/post/${post.slug.current}`} key={post._id}>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3 }}
-                whileHover={{ scale: 1.02 }}
-                className="mb-4 flex flex-col group border-slate-500 border-opacity-25 cursor-pointer hover:shadow-[0_35px_60px_-8px_rgba(0,0,0,0.4)]">
-                <div className="relative w-full h-[220px]">
-                  <Image
-                    className="object-cover rounded-t-md"
-                    src={urlFor(post.mainImage).url()}
-                    alt={post.author.name}
-                    fill
-                    style={{ objectPosition: "50% 50%" }}
-                  />
-                </div>
-                <div className="p-3 pb-5 pt-0">
-                  <div className="mt-5 flex-1">
-                    <p className="text-lg font-bold">{post.title}</p>
-                    <p className="line-clamp-2 text-white">{post.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            </ClientSideRoute>
-          ))
+          <PortfolioGrid
+            posts={filteredPosts.map((p) => ({
+              title: p.title,
+              slug: p.slug,
+              excerpt: p.description,
+              priority: p.priority,
+              coverImage: urlFor(p.mainImage).url(),
+            }))}
+          />
         ) : (
           <div className="col-span-full text-center py-10">
             <p className="text-gray-400">No posts available at the moment.</p>

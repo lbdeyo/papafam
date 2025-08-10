@@ -1,3 +1,7 @@
+.break-inside-avoid {
+  break-inside: avoid;
+}
+
 /* Removed external font imports; site uses system Helvetica Neue stack */
 
 @tailwind base;
@@ -96,6 +100,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -136,7 +141,6 @@ h1 {
   font-style: normal;
   color: #f79b08;
   filter: var(--primary-glow);
-  text-shadow: 2px 2px 1px black;
 }
 
 h1.light {
@@ -194,39 +198,7 @@ h1.light {
   }
 }
 
-#spot {
-  background: linear-gradient(to right, aquamarine, mediumpurple);
-  height: 500px;
-  aspect-ratio: 1;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-
-  z-index: 0;
-  translate: -50% -50%;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  50% {
-    scale: 1 1.5;
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-#spot {
-  animation: rotate 20s infinite;
-  filter: blur(200px);
-  pointer-events: none;
-}
+/* spotlight removed */
 
 .headerLogo {
   top: 10px;
