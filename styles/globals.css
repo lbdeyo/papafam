@@ -1,11 +1,23 @@
-@import url(https://fonts.googleapis.com/css?family=Zilla+Slab:300,300italic,regular,italic,500,500italic,600,600italic,700,700italic);
-@import url("https://fonts.cdnfonts.com/css/univers");
-@import url("https://use.typekit.net/sxm5rwv.css");
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+.break-inside-avoid {
+  break-inside: avoid;
+}
+
+/* Removed external font imports; site uses system Helvetica Neue stack */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Headings use Helvetica Neue */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
 
 :root {
   --max-width: 1100px;
@@ -15,8 +27,8 @@
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 26, 26, 26;
-  --background-end-rgb: 26, 26, 26;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 
   --primary-glow: conic-gradient(from 180deg at 50% 50%,
       #16abff33 0deg,
@@ -46,9 +58,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-rgb: 26, 26, 26;
-    --background-start-rgb: 26, 26, 26;
-    --background-end-rgb: 26, 26, 26;
+    --background-rgb: 0, 0, 0;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
 
     --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
     --secondary-glow: linear-gradient(to bottom right,
@@ -82,12 +94,13 @@
 
 html,
 body {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 18px;
   max-width: 100vw;
   overflow-x: hidden;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -123,16 +136,15 @@ a:hover {
 }
 
 h1 {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-style: normal;
   color: #f79b08;
   filter: var(--primary-glow);
-  text-shadow: 2px 2px 1px black;
 }
 
 h1.light {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
 
@@ -186,39 +198,7 @@ h1.light {
   }
 }
 
-#spot {
-  background: linear-gradient(to right, aquamarine, mediumpurple);
-  height: 500px;
-  aspect-ratio: 1;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-
-  z-index: 0;
-  translate: -50% -50%;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  50% {
-    scale: 1 1.5;
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-#spot {
-  animation: rotate 20s infinite;
-  filter: blur(200px);
-  pointer-events: none;
-}
+/* spotlight removed */
 
 .headerLogo {
   top: 10px;
@@ -242,7 +222,7 @@ h1.light {
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .card p {
@@ -251,26 +231,26 @@ h1.light {
   font-size: 0.9rem;
   line-height: 1.5;
   max-width: 30ch;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 button,
 .btn {
-  font-family: "industry-inc-base", sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .industry-btn {
-  font-family: "industry-inc-base", sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .portfolio-filter-btn {
-  font-family: "Cormorant Garamond", serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: 400;
   text-transform: none;
   letter-spacing: normal;

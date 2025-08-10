@@ -22,7 +22,7 @@ const Spotlight = () => {
     }
   }, [spotRef]);
 
-  return <div id="spot" className="opacity-30" ref={spotRef}></div>;
+  return <div id="spot" className="opacity-100" ref={spotRef}></div>;
 };
 
 export default Spotlight;

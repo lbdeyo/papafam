@@ -1,94 +1,131 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Typewriter } from "react-simple-typewriter";
-
+import SimpleTypewriter from "./SimpleTypewriter";
 function Jumbotron() {
   return (
-    <section className="mx-10 mb-10 fade-in-2 mt-20">
-      <div className="max-w-4xl z-30">
-        <div className="mt-10">
-          <h1 className="text-6xl md:text-6xl mb-0 pb-0 text-[#f79b08]">
-            Professional-Strength Design & Development
-          </h1>
+    <section className="mx-0 mb-10 fade-in-2 mt-12 md:mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-6 auto-rows-auto">
+        {/* Hero card */}
+        <div className="md:col-span-4 rounded-2xl p-4 sm:p-6 md:p-8 bg-[#FF0000] text-white border border-red-600 ring-1 ring-red-300/30 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
+          <div className="flex flex-col h-full">
+            <div>
+              <Image src="lb-logo.svg" alt="L.B. Deyo" width={200} height={200} className="brightness-0 invert pb-2" />
+            </div>
+            <div>
+              <h1 className="text-3xl sm:text-4xl md:text-6xl leading-tight sm:leading-tight md:leading-[1.05] tracking-tight break-words text-white">
+                Professional Web Design and Development
+              </h1>
+              <p className="mt-2 text-base sm:text-lg md:text-2xl text-white/95">
+                Creating {" "}
+                <SimpleTypewriter
+                  className="font-semibold"
+                  words={["websites", "apps", "motion graphics", "video", "branding", "illustration"]}
+                  typeSpeedMs={70}
+                  deleteSpeedMs={50}
+                  delayBetweenWordsMs={1200}
+                />
+                {" "}and much more.
+              </p>
+              <div className="mt-4 flex items-center gap-3 flex-wrap">
+                <Link
+                  href="/contact"
+                  className="inline-block border-2 border-white bg-white text-[#FF0000] hover:bg-transparent hover:text-white font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none focus:ring-4 focus:ring-white/40"
+                >
+                  Let&apos;s get started
+                </Link>
+                <Link
+                  href="#portfolio"
+                  className="inline-block border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#FF0000] font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none focus:ring-4 focus:ring-white/40"
+                >
+                  View portfolio
+                </Link>
+              </div>
+            </div>
+            <div className="mt-6 md:mt-8 pt-2 md:pt-3 border-t border-red-500/40" />
+          </div>
+        </div>
 
-          <div className="border-b-[#ffae00] shadow-black shadow-sm border-b mt-2"></div>
-          <p className="mt-2 md:mt-3 text-2xl mb-3">
-            Creating multimedia, websites and more.
+        {/* About blurb card */}
+        <div className="md:col-span-2 rounded-2xl p-4 sm:p-6 md:p-8 bg-[#2c3a24] text-white border border-[#3a4a2e] ring-1 ring-white/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
+
+          <p className="text-sm sm:text-base md:text-base lg:text-lg text-white/95">
+
+            <span className="text-white font-bold ">Full Service</span> web design and development. Motion graphics and video. Print.
+            Social Media. I&apos;m L.B. Deyo, and I&apos;ve created work for major clients like
+            Ford Motor Company, Jane magazine, Cisco Systems, Universal
+            Studios, The Plaza Hotel, and Calvin Klein. Now it&apos;s time to
+            tell your story.
           </p>
-          <div className="flex flex-col md:flex-row">
-            <p className="md:text-justify first-line:uppercase md:first-line:tracking-widest">
-              Web design and development. Motion graphics and video. Print.
-              Social Media. L.B. Deyo has created work for major clients like
-              Ford Motor Company, Jane magazine, Cisco Systems, Universal
-              Studios, The Plaza Hotel, and Calvin Klein. Now it&apos;s time to
-              tell your story.
-            </p>
+          <div className="mt-4">
+            <Link
+              href="/about"
+              className="inline-block border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#2c3a24] font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none focus:ring-4 focus:ring-white/40"
+            >
+              Learn more
+            </Link>
           </div>
         </div>
-      </div>
-      <div className="border-b-zinc-500 shadow-black shadow-sm border-b my-5"></div>
-      <div className="w-full">
-        <h1 className="text-3xl">Services</h1>
-        <div className="max-w-5xl">
-          <div className="mb-6 mt-3 columns-1 md:columns-2 gap-8 space-y-4">
-            <p>
-              <span className="text-white opacity-100">
-                Digital and print design
-              </span>{" "}
-              <span className="opacity-75">
-                with Adobe Photoshop, Adobe Illustrator, Adobe InDesign, Figma,
-                and other applications.
-              </span>
-            </p>
 
-            <p>
-              <span className="text-white opacity-100">
-                Custom illustration
-              </span>
-              <span className="opacity-75">, freehand and digital.</span>
-            </p>
 
-            <p>
-              <span className="text-white opacity-100">
-                Coding with modern standards-based technologies
-              </span>
-              <span className="opacity-75">
-                , including HTML, CSS, JavaScript, React, Next.js, Tailwind CSS,
-                and more. Expertise in UI/UX. Meta Certified in JavaScript, HTML & CSS, and Advanced React. Google Certified in Google Ads.
-              </span>
-            </p>
 
-            <p>
-              <span className="text-white opacity-100">
-                Video and motion graphics
-              </span>{" "}
-              <span className="opacity-75 inline">
-                production (shooting, sound recording) and postproduction with
-                tools like Adobe Premiere, Adobe After Effects, Final Cut Pro
-                and Cinema 4D.
-              </span>
-            </p>
-
-            <p>
-              <span className="text-white opacity-100">Copywriting</span>&nbsp;
-              <span className="opacity-75">for editorial and advertising.</span>
-            </p>
-
-            <p>
-              <span className="text-white opacity-100">Sound editing</span>
-              &nbsp;
-              <span className="opacity-75">
-                in Logic Pro X and Adobe Audition.
-              </span>
-            </p>
-          </div>
-
-          <Link
-            href="/contact"
-            className="industry-btn text-black bg-[#ffae00] hover:bg-[#ffcc00] focus:ring-4 hover:text-black font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none text-bold focus:ring-blue-800">
-            GET IN&nbsp;TOUCH
-          </Link>
+        {/* Services tiles (3 across on desktop) */}
+        <div className="md:col-span-2 rounded-2xl p-4 sm:p-6 md:p-6 bg-[#2c3a24] text-white border border-[#3a4a2e] ring-1 ring-white/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
+          <p>
+            <span className="text-white font-bold">Digital and print design</span>{" "}
+            <span className="opacity-75">
+              with Adobe Photoshop, Adobe Illustrator, Adobe InDesign, Figma,
+              and other applications.
+            </span>
+          </p>
         </div>
+
+        <div className="md:col-span-2 rounded-2xl p-4 sm:p-6 md:p-6 bg-neutral-900 text-white border border-neutral-800 ring-1 ring-white/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
+          <p>
+            <span className="text-white font-bold">Copywriting &amp; illustration</span>
+            <span className="opacity-75"> — freehand and digital illustration; copy for editorial and advertising.</span>
+          </p>
+        </div>
+
+        <div className="md:col-span-2 rounded-2xl p-4 sm:p-6 md:p-6 bg-neutral-900 text-white border border-neutral-800 ring-1 ring-white/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
+          <p>
+            <span className="text-white font-bold">Sound editing</span>
+            &nbsp;
+            <span className="opacity-75">in Logic Pro X and Adobe Audition.</span>
+          </p>
+        </div>
+
+        <div className="md:col-span-4 rounded-2xl p-4 sm:p-6 md:p-6 bg-blue-900 text-white border border-blue-800 ring-1 ring-blue-300/20 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
+          <p>
+            <span className="text-white font-bold">Coding with modern standards-based technologies</span>
+            <span className="opacity-75">
+              , including HTML, CSS, JavaScript, React, Next.js, Tailwind CSS,
+              and more. Expertise in UI/UX. Meta Certified in JavaScript, HTML & CSS, and Advanced React. Google Certified in Google Ads.
+            </span>
+          </p>
+        </div>
+
+        <div className="md:col-span-2 rounded-2xl p-4 sm:p-6 md:p-6 bg-amber-900 text-white border border-amber-800 ring-1 ring-amber-300/20 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
+          <p>
+            <span className="text-white font-bold">Video and motion graphics</span>{" "}
+            <span className="opacity-75 inline">
+              production (shooting, sound recording) and postproduction with
+              tools like Adobe Premiere, Adobe After Effects, Final Cut Pro
+              and Cinema 4D.
+            </span>
+          </p>
+        </div>
+
+        {/* Certifications card */}
+        <div className="md:col-span-6 rounded-2xl p-4 sm:p-6 md:p-6 bg-neutral-900 text-white border border-neutral-800 ring-1 ring-white/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
+          <p className="text-base sm:text-lg">
+            <span className="text-white font-bold">Meta Certified</span> in JavaScript, HTML/CSS, and Advanced React.
+          </p>
+          <p className="text-base sm:text-lg mt-2">
+            <span className="text-white font-bold">Google Certified</span> in Google Ads and Google Analytics.
+          </p>
+        </div>
+
+        {/* CTA tile removed; CTA moved into hero (red) tile */}
       </div>
     </section>
   );

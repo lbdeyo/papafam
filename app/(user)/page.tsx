@@ -1,4 +1,4 @@
-import BackgroundOrchid from "@/components/BackgroundOrchid";
+
 import BlogList from "@/components/BlogList";
 import Jumbotron from "@/components/Jumbotron";
 // import ShowreelVideo from "@/components/ShowreelVideo";
@@ -27,15 +27,10 @@ export default async function TestPage() {
 
   return (
     <div className="min-h-screen relative">
-      {/* Content */}
-      <div className="relative flex flex-col items-center">
-        {/* <ShowreelVideo /> */}
-        <div className="relative w-full">
-          {/* <BackgroundOrchid /> */}
-          <div className="w-full max-w-screen-lg mx-auto">
-            <Jumbotron />
-            <BlogList posts={posts} />
-          </div>
+      <div className="relative w-full">
+        <div className="w-full max-w-screen-lg mx-auto px-4 md:px-0 py-6 md:py-10">
+          <Jumbotron />
+          <BlogList posts={posts} />
         </div>
       </div>
     </div>

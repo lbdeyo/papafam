@@ -10,76 +10,56 @@ export const revalidate = 60; //revalidate every 60 seconds
 
 async function About() {
   return (
-    <div className="min-h-screen bg-[#1c1c1c] relative flex flex-col items-center">
-      <section className="w-full max-w-screen-lg mx-auto px-10 mb-10 mt-24 fade-in-2">
-        <div>
-          <h1 className="text-5xl md:text-6xl mb-0 pb-0 text-[#FF0479]">
-            About L.B. Deyo
-          </h1>
-          <div className="border-b-[#ffae00] shadow-black shadow-sm border-b mt-2"></div>
-          <div className="lg:flex lg:flex-row lg:justify-between">
-            <Image
-              className="mt-10 lg:mr-10 object-cover object-top-center mx-auto rounded-xl"
-              src="/lb-portrait-chrysler.jpg"
-              alt="L.B. Deyo"
-              width={450}
-              height={450}
-              priority
-            />
-            <div className="mt-6">
-              <h1 className="mt-2 md:mt-3 text-3xl mb-3">
-                Hybrid developer/designer
-              </h1>
-              <p
-                className="md:text-justify first-line:uppercase md:first-line:tracking-widest
-first-letter:text-6xl   
-first-letter:mr-3 first-letter:float-left">
-                Throughout his career, L.B. Deyo has been a multimedia creator,
-                specializing in crafting visually stunning and engaging digital
-                experiences. Everything he creates, whether in code or in
-                design, is made at the service of a single objective: To tell
-                stories. He wants to tell yours. With a keen eye for aesthetics
-                and mastery of cutting-edge technologies, he&apos;ll bring your
-                ideas to life through a range of media, including:
-              </p>
-              <div className="my-4">
-                <h1 className="text-xl mt-3">Print and digital design</h1>
-                <blockquote>
-                  Bringing advanced knowledge of typography and layout. Expert
-                  in tools like Photoshop, Illustrator and InDesign.
-                </blockquote>
-                <h1 className="text-xl mt-3">
-                  Coding with modern standards-based technologies
-                </h1>
-                <blockquote>
-                  Developing in React and Next, using headless CMS, to create
-                  sites that can be securely maintained by non-programmers. L.B.
-                  Deyo built this site and can build yours.
-                </blockquote>
-                <h1 className="text-xl mt-3">Video and motion graphics</h1>
-                <blockquote>
-                  Combining a passion for animation and cinema with skills in
-                  photography, editing, and proficiency in Adobe Premiere and
-                  Adobe After Effects.
-                </blockquote>
-                <h1 className="text-xl mt-3">Sound editing</h1>
-                <blockquote>
-                  L.B. Deyo is a power user of Logic Pro X, and can offer sound
-                  mixing and design for your videos or other projects.
-                </blockquote>
-                <h1 className="text-xl mt-3">Custom illustration</h1>
-                <blockquote>
-                  Creating illustrations in Blender, Illustrator, Photoshop, and
-                  Adobe Animate.
-                </blockquote>
-              </div>
-              <Link
-                href="/contact"
-                className="industry-btn text-black bg-[#ffae00] hover:bg-[#ffcc00] focus:ring-4 hover:text-black font-medium rounded-lg text-sm px-5 py-2.5 text-bold mr-2 focus:outline-none focus:ring-blue-800">
-                CONTACT
-              </Link>
-              <div className="m-5"></div>
-            </div>
+    <div className="min-h-screen relative">
+      <section className="relative w-full">
+        <div className="w-full max-w-screen-lg mx-auto px-4 md:px-0 pt-20 md:pt-16 pb-10 mb-10 fade-in-2 grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-6 auto-rows-auto">
+          {/* Main Card */}
+          <div className="md:col-span-6 rounded-2xl p-4 sm:p-6 md:p-8 bg-[#FF0000] text-white border border-red-600 ring-1 ring-red-300/30 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl leading-tight break-words text-white mb-3">
+              About L.B. Deyo
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl text-white/95 space-y-3">
+              I’m L.B. Deyo — a front-end developer, designer, and digital strategist with extensive experience bringing ideas to life online. My background spans web development, UX/UI design, and digital marketing, giving me the ability to design websites that are not only visually striking, but also optimized to perform. I’ve worked with a wide range of tools and frameworks, from Adobe Creative Suite to modern JavaScript frameworks, to deliver sites that meet both aesthetic and business goals.
+            </p>
+          </div>
+
+          {/* Card 2: Website Creation System */}
+          <div className="md:col-span-6 rounded-2xl p-4 sm:p-6 md:p-8 bg-neutral-900 text-white border border-neutral-800 ring-1 ring-white/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
+            <h2 className="text-2xl md:text-3xl font-semibold">My Website Creation System</h2>
+            <p className="mt-3 text-white/90">
+              Every website I build follows a proven, results-driven process designed to ensure the final product is beautiful, functional, and easy for your audience to find:
+            </p>
+            <ol className="mt-4 space-y-4 list-decimal pl-5">
+              <li>
+                <span className="font-semibold">Keyword & SEO Optimization.</span>
+                <span className="block text-white/90"> I start by using tools like Google Ads and Google Analytics to identify the right SEO strategy and keyword set. This ensures your site is built on a foundation of discoverability from day one, targeting the exact terms your audience is searching for.</span>
+              </li>
+              <li>
+                <span className="font-semibold">Design & Mockups.</span>
+                <span className="block text-white/90"> Once the SEO plan is in place, I create polished mockups and brand assets in Photoshop, Illustrator, or Figma. This design phase captures your vision while incorporating UX best practices to make the site intuitive and engaging.</span>
+              </li>
+              <li>
+                <span className="font-semibold">Development in Next.js & React.</span>
+                <ul className="mt-2 list-disc pl-5 space-y-1 text-white/90">
+                  <li>Reusable components for consistent design and easier maintenance</li>
+                  <li>Dynamic, interactive interfaces for a more engaging user experience</li>
+                  <li>Fast rendering with server-side rendering (SSR) and static site generation (SSG) for speed and SEO benefits</li>
+                  <li>Scalability for future growth and feature expansion</li>
+                  <li>State management for smooth, app-like interactions</li>
+                </ul>
+              </li>
+              <li>
+                <span className="font-semibold">Iterative Collaboration.</span>
+                <span className="block text-white/90"> Throughout the process, I work iteratively and in close consultation with you. This ensures feedback is incorporated quickly, surprises are avoided, and the final website truly matches your needs and vision.</span>
+              </li>
+            </ol>
+          </div>
+
+          {/* Card 3: Closing statement */}
+          <div className="md:col-span-6 rounded-2xl p-4 sm:p-6 md:p-8 bg-[#2c3a24] text-white border border-[#3a4a2e] ring-1 ring-white/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
+            <p className="text-white/95">
+              With this system, you don’t just get a website — you get a digital platform designed for visibility, usability, and long-term success.
+            </p>
           </div>
         </div>
       </section>
