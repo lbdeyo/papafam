@@ -17,7 +17,7 @@ function page() {
           </div>
 
           {/* Form card */}
-          <div className="md:col-span-6 rounded-2xl p-4 sm:p-6 md:p-8 bg-neutral-900 text-white border border-neutral-800 ring-1 ring-white/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
+          <div className="md:col-span-6 rounded-2xl p-4 sm:p-6 md:p-8 bg-neutral-800 text-white border border-neutral-800 ring-1 ring-white/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
             <FormStyled />
           </div>
         </div>
@@ -70,7 +70,9 @@ function FormStyled() {
     >
       <input type="hidden" name="_subject" value="Message to L.B. Deyo, Designer" />
       <div className="col-span-1">
+        <label htmlFor="nameField" className="block text-sm font-medium text-zinc-200 mb-2">Name</label>
         <input
+          id="nameField"
           className={inputClass(!!errors.name)}
           name="name"
           placeholder="Name"
@@ -87,8 +89,10 @@ function FormStyled() {
         )}
       </div>
       <div className="col-span-1">
+        <label htmlFor="emailField" className="block text-sm font-medium text-zinc-200 mb-2">Email address</label>
         <input
           type="email"
+          id="emailField"
           className={inputClass(!!errors.email)}
           name="email"
           placeholder="Email address"
@@ -104,8 +108,10 @@ function FormStyled() {
           </p>
         )}
       </div>
+      <div className="md:col-span-2">
+        <label htmlFor="typeSelector" className="block text-sm font-medium text-zinc-200 ">I need...</label>
+      </div>
       <select className={selectClass} name="typeSelect" title="typeSelect" id="typeSelector">
-        <option value="">I need...</option>
         <option value="newWebsite">A new website</option>
         <option value="workWebsite">Updates to my existing website</option>
         <option value="video">A video</option>
@@ -115,8 +121,10 @@ function FormStyled() {
         <option value="other">Other</option>
       </select>
       <div className="md:col-span-2">
+        <label htmlFor="messageField" className="block text-sm font-medium text-zinc-200 mb-2">Message</label>
         <textarea
           name="message"
+          id="messageField"
           className={textareaClass(!!errors.message)}
           rows={6}
           placeholder="Write your message here"
