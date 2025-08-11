@@ -66,6 +66,7 @@ function FormStyled() {
     <form
       action="https://formsubmit.co/lbdeyo@gmail.com"
       method="POST"
+      autoComplete="on"
       className="grid grid-cols-1 md:grid-cols-2 gap-4 text-zinc-900"
     >
       <input type="hidden" name="_subject" value="Message to L.B. Deyo, Designer" />
@@ -76,6 +77,7 @@ function FormStyled() {
           className={inputClass(!!errors.name)}
           name="name"
           placeholder="Name"
+          autoComplete="name"
           required
           onBlur={onBlurName}
           onChange={() => clearError("name")}
@@ -96,6 +98,7 @@ function FormStyled() {
           className={inputClass(!!errors.email)}
           name="email"
           placeholder="Email address"
+          autoComplete="email"
           required
           onBlur={onBlurEmail}
           onChange={() => clearError("email")}
