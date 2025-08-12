@@ -6,6 +6,7 @@ import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/RichTextComponents";
 import type { Post } from "@/typings";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 type Props = {
   params: {
@@ -14,6 +15,38 @@ type Props = {
 };
 
 export const revalidate = 30;
+
+export async function generateMetadata({ params: { slug } }: { params: { slug: string } }): Promise<Metadata> {
+  const query = groq`*[_type =='post' && slug.current ==$slug][0]{title, description, mainImage}`;
+  try {
+    const data = await client.fetch(query, { slug });
+    const title = data?.title ? `${data.title} — L.B. Deyo` : "Post — L.B. Deyo";
+    const description = data?.description || "Portfolio project";
+    const imageUrl = data?.mainImage ? urlFor(data.mainImage).url() : "/seo/social-preview-image.jpg";
+    return {
+      title,
+      description,
+      openGraph: {
+        title,
+        description,
+        images: [{ url: imageUrl }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        images: [imageUrl],
+      },
+    };
+  } catch {
+    return {
+      title: "Post — L.B. Deyo",
+      description: "Portfolio project",
+      openGraph: { images: [{ url: "/seo/social-preview-image.jpg" }] },
+      twitter: { card: "summary_large_image", images: ["/seo/social-preview-image.jpg"] },
+    };
+  }
+}
 
 export async function generateStaticParams() {
   try {

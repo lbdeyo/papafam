@@ -1,11 +1,32 @@
 
 import BlogList from "@/components/BlogList";
+import type { Metadata } from "next";
 import Jumbotron from "@/components/Jumbotron";
 // import ShowreelVideo from "@/components/ShowreelVideo";
 import { groq } from "next-sanity";
 import { client } from "@/lib/sanity.client";
 
 export const revalidate = 30;
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Portfolio of web design, development, motion graphics, and more by L.B. Deyo.",
+  openGraph: {
+    title: "L.B. Deyo — Portfolio",
+    description: "Web design and full‑stack development with motion graphics, video, print, and illustration.",
+    images: [
+      {
+        url: "/seo/social-preview-image.jpg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "L.B. Deyo — Portfolio",
+    description: "Web design and full‑stack development with motion graphics, video, print, and illustration.",
+    images: ["/seo/social-preview-image.jpg"],
+  },
+};
 
 const query = groq`
   *[_type=='post'] {

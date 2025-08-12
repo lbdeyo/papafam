@@ -7,7 +7,25 @@ import {
   faPeopleArrows,
 } from "@fortawesome/free-solid-svg-icons";
 
+import type { Metadata } from "next";
+
 export const revalidate = 60; //revalidate every 60 seconds
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "About L.B. Deyo — designer and front‑end developer.",
+  openGraph: {
+    title: "About — L.B. Deyo",
+    description: "Designer and front‑end developer focused on performance and UX.",
+    images: [{ url: "/seo/social-preview-image.jpg" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About — L.B. Deyo",
+    description: "Designer and front‑end developer focused on performance and UX.",
+    images: ["/seo/social-preview-image.jpg"],
+  },
+};
 
 async function About() {
   return (

@@ -1,6 +1,8 @@
 "use client";
 import React, { useCallback, useState } from "react";
 
+// metadata moved to app/contact/metadata.ts (server context)
+
 function page() {
   return (
     <div className="min-h-screen relative">
