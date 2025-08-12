@@ -1,10 +1,11 @@
-import { client, staticClient } from "@/lib/sanity.client";
-import { groq } from "next-sanity";
-import Image from "next/image";
-import type { Post } from "@/typings";
-import Link from "next/link";
-
 // ABOUT PAGE
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMagnifyingGlassChart,
+  faPenRuler,
+  faCode,
+  faPeopleArrows,
+} from "@fortawesome/free-solid-svg-icons";
 
 export const revalidate = 60; //revalidate every 60 seconds
 
@@ -19,7 +20,7 @@ async function About() {
               About L.B. Deyo
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-white/95 space-y-3">
-              I’m L.B. Deyo — a front-end developer, designer, and digital strategist with extensive experience bringing ideas to life online. My background spans web development, UX/UI design, and digital marketing, giving me the ability to design websites that are not only visually striking, but also optimized to perform. I’ve worked with a wide range of tools and frameworks, from Adobe Creative Suite to modern JavaScript frameworks, to deliver sites that meet both aesthetic and business goals.
+              I&apos;m L.B. Deyo — a front-end developer, designer, and digital strategist with extensive experience bringing ideas to life online. My background spans web development, UX/UI design, and digital marketing, giving me the ability to design websites that are not only visually striking, but also optimized to perform. I&apos;ve worked with a wide range of tools and frameworks, from Adobe Creative Suite to modern JavaScript frameworks, to deliver sites that meet both aesthetic and business goals.
             </p>
           </div>
 
@@ -29,30 +30,58 @@ async function About() {
             <p className="mt-3 text-white/90">
               Every website I build follows a proven, results-driven process designed to ensure the final product is beautiful, functional, and easy for your audience to find:
             </p>
-            <ol className="mt-4 space-y-4 list-decimal pl-5">
+            <ul className="mt-4 space-y-4 list-none pl-0">
               <li>
-                <span className="font-semibold">Keyword & SEO Optimization.</span>
-                <span className="block text-white/90"> I start by using tools like Google Ads and Google Analytics to identify the right SEO strategy and keyword set. This ensures your site is built on a foundation of discoverability from day one, targeting the exact terms your audience is searching for.</span>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 text-[40px] md:text-[48px] leading-none shrink-0 text-white/90">
+                    <FontAwesomeIcon icon={faMagnifyingGlassChart} />
+                  </span>
+                  <div>
+                    <span className="font-semibold">Keyword & SEO Optimization.</span>
+                    <span className="block text-white/90"> I start by using tools like Google Ads and Google Analytics to identify the right SEO strategy and keyword set. This ensures your site is built on a foundation of discoverability from day one, targeting the exact terms your audience is searching for.</span>
+                  </div>
+                </div>
               </li>
               <li>
-                <span className="font-semibold">Design & Mockups.</span>
-                <span className="block text-white/90"> Once the SEO plan is in place, I create polished mockups and brand assets in Photoshop, Illustrator, or Figma. This design phase captures your vision while incorporating UX best practices to make the site intuitive and engaging.</span>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 text-[40px] md:text-[48px] leading-none shrink-0 text-white/90">
+                    <FontAwesomeIcon icon={faPenRuler} />
+                  </span>
+                  <div>
+                    <span className="font-semibold">Design & Mockups.</span>
+                    <span className="block text-white/90"> Once the SEO plan is in place, I create polished mockups and brand assets in Photoshop, Illustrator, or Figma. This design phase captures your vision while incorporating UX best practices to make the site intuitive and engaging.</span>
+                  </div>
+                </div>
               </li>
               <li>
-                <span className="font-semibold">Development in Next.js & React.</span>
-                <ul className="mt-2 list-disc pl-5 space-y-1 text-white/90">
-                  <li>Reusable components for consistent design and easier maintenance</li>
-                  <li>Dynamic, interactive interfaces for a more engaging user experience</li>
-                  <li>Fast rendering with server-side rendering (SSR) and static site generation (SSG) for speed and SEO benefits</li>
-                  <li>Scalability for future growth and feature expansion</li>
-                  <li>State management for smooth, app-like interactions</li>
-                </ul>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 text-[40px] md:text-[48px] leading-none shrink-0 text-white/90">
+                    <FontAwesomeIcon icon={faCode} />
+                  </span>
+                  <div>
+                    <span className="font-semibold">Development in Next.js & React.</span>
+                    <ul className="mt-2 list-disc pl-5 space-y-1 text-white/90">
+                      <li>Reusable components for consistent design and easier maintenance</li>
+                      <li>Dynamic, interactive interfaces for a more engaging user experience</li>
+                      <li>Fast rendering with server-side rendering (SSR) and static site generation (SSG) for speed and SEO benefits</li>
+                      <li>Scalability for future growth and feature expansion</li>
+                      <li>State management for smooth, app-like interactions</li>
+                    </ul>
+                  </div>
+                </div>
               </li>
               <li>
-                <span className="font-semibold">Iterative Collaboration.</span>
-                <span className="block text-white/90"> Throughout the process, I work iteratively and in close consultation with you. This ensures feedback is incorporated quickly, surprises are avoided, and the final website truly matches your needs and vision.</span>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 text-[40px] md:text-[48px] leading-none shrink-0 text-white/90">
+                    <FontAwesomeIcon icon={faPeopleArrows} />
+                  </span>
+                  <div>
+                    <span className="font-semibold">Iterative Collaboration.</span>
+                    <span className="block text-white/90"> Throughout the process, I work iteratively and in close consultation with you. This ensures feedback is incorporated quickly, surprises are avoided, and the final website truly matches your needs and vision.</span>
+                  </div>
+                </div>
               </li>
-            </ol>
+            </ul>
           </div>
 
           {/* Card 3: Closing statement */}
