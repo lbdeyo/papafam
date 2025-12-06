@@ -33,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: {
     default: "L.B. Deyo, Designer",
     template: "%s | L.B. Deyo",
