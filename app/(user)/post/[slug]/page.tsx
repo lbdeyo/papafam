@@ -8,15 +8,12 @@ import type { Post } from "@/typings";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
+type DeferredParams = Promise<{ slug: string }>;
 
 export const revalidate = 30;
 
-export async function generateMetadata({ params: { slug } }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: DeferredParams }): Promise<Metadata> {
+  const { slug } = await params;
   const query = groq`*[_type =='post' && slug.current ==$slug][0]{title, description, mainImage}`;
   try {
     const data = await client.fetch(query, { slug });
@@ -66,8 +63,9 @@ export async function generateStaticParams() {
   }
 }
 
-export default async function Page({ params: { slug } }: Props) {
+export default async function Page({ params }: { params: DeferredParams }) {
   try {
+    const { slug } = await params;
     const query = groq`*[_type =='post' && slug.current ==$slug][0]
     {
       ...,

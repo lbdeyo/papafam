@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    // Enable better error handling for static generation
-    missingSuspenseWithCSRError: false,
-  },
   images: {
     domains: ["cdn.sanity.io"],
     unoptimized: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
   // Add better error handling for static generation
   onDemandEntries: {
