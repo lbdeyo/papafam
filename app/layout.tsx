@@ -6,7 +6,7 @@ import React from "react";
 import Script from "next/script";
 import type { Metadata } from "next";
 import { Instrument_Sans, Instrument_Serif } from "next/font/google";
-import { OG_IMAGE } from "@/lib/site";
+import { OG_IMAGE, SITE } from "@/lib/site";
 
 const sans = Instrument_Sans({
   subsets: ["latin"],
@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? SITE.url),
   title: {
     default: "L.B. Deyo, Designer",
     template: "%s | L.B. Deyo",
@@ -67,6 +67,7 @@ export const metadata: Metadata = {
         width: OG_IMAGE.width,
         height: OG_IMAGE.height,
         alt: OG_IMAGE.alt,
+        type: OG_IMAGE.type,
       },
     ],
   },
@@ -78,6 +79,10 @@ export const metadata: Metadata = {
     images: [OG_IMAGE.url],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
 };

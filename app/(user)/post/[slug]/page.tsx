@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: DeferredParams }): 
       openGraph: {
         title,
         description,
-        images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: OG_IMAGE.alt }],
+        images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: OG_IMAGE.alt, type: OG_IMAGE.type }],
       },
       twitter: {
         card: "summary_large_image",
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: { params: DeferredParams }): 
     return {
       title: "Post — L.B. Deyo",
       description: "Portfolio project",
-      openGraph: { images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: OG_IMAGE.alt }] },
+      openGraph: { images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: OG_IMAGE.alt, type: OG_IMAGE.type }] },
       twitter: { card: "summary_large_image", images: [OG_IMAGE.url] },
     };
   }

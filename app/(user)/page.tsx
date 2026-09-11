@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Jumbotron from "@/components/Jumbotron";
 import { groq } from "next-sanity";
 import { client } from "@/lib/sanity.client";
+import { OG_IMAGE } from "@/lib/site";
 
 export const revalidate = 30;
 
@@ -14,7 +15,11 @@ export const metadata: Metadata = {
     description: "Web design and full‑stack development with motion graphics, video, print, and illustration.",
     images: [
       {
-        url: "/seo/social-preview-image.jpg",
+        url: OG_IMAGE.url,
+        width: OG_IMAGE.width,
+        height: OG_IMAGE.height,
+        alt: OG_IMAGE.alt,
+        type: OG_IMAGE.type,
       },
     ],
   },
@@ -22,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "L.B. Deyo — Portfolio",
     description: "Web design and full‑stack development with motion graphics, video, print, and illustration.",
-    images: ["/seo/social-preview-image.jpg"],
+    images: [OG_IMAGE.url],
   },
 };
 

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { CLIENTS, SITE } from "@/lib/site";
+import { CLIENTS, OG_IMAGE, SITE } from "@/lib/site";
 
 export const revalidate = 60;
 
@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About — L.B. Deyo",
     description: "Designer and front‑end developer focused on performance and UX.",
-    images: [{ url: "/seo/social-preview-image.jpg" }],
+    images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: OG_IMAGE.alt, type: OG_IMAGE.type }],
   },
   twitter: {
     card: "summary_large_image",
     title: "About — L.B. Deyo",
     description: "Designer and front‑end developer focused on performance and UX.",
-    images: ["/seo/social-preview-image.jpg"],
+    images: [OG_IMAGE.url],
   },
 };
 

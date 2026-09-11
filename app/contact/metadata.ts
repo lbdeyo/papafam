@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGE } from "@/lib/site";
 
 export const metadata: Metadata = {
     title: "Contact",
@@ -6,13 +7,13 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Contact — L.B. Deyo",
         description: "Start your project: web design, development, motion graphics, and more.",
-        images: [{ url: "/seo/social-preview-image.jpg" }],
+        images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: OG_IMAGE.alt, type: OG_IMAGE.type }],
     },
     twitter: {
         card: "summary_large_image",
         title: "Contact — L.B. Deyo",
         description: "Start your project: web design, development, motion graphics, and more.",
-        images: ["/seo/social-preview-image.jpg"],
+        images: [OG_IMAGE.url],
     },
 };
 

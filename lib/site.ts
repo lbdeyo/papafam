@@ -1,6 +1,7 @@
 export const SITE = {
   name: "L.B. Deyo",
   title: "L.B. Deyo, Designer",
+  url: "https://lbdeyo.com",
   email: "lbdeyo@gmail.com",
   location: "Austin",
   tagline: "I design and build the things people look at twice.",
@@ -9,10 +10,11 @@ export const SITE = {
 };
 
 export const OG_IMAGE = {
-  url: "/seo/social-preview-image.jpg",
-  width: 1280,
-  height: 720,
+  url: "/seo/og-image.jpg",
+  width: 1200,
+  height: 630,
   alt: "L.B. Deyo, Designer",
+  type: "image/jpeg",
 };
 
 export const NAV = [
