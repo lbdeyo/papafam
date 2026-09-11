@@ -1,9 +1,7 @@
 import Script from "next/script";
-import { OG_IMAGE, SITE } from "@/lib/site";
+import { OG_IMAGE } from "@/lib/site";
 
 export default function Head() {
-  const ogImage = `${SITE.url}${OG_IMAGE.url}`;
-
   return (
     <>
       <title>L.B. Deyo, Designer</title>
@@ -13,7 +11,7 @@ export default function Head() {
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       <meta
         property="og:image"
-        content={ogImage}
+        content={OG_IMAGE.url}
       />
       <meta
         property="og:description"
@@ -28,7 +26,7 @@ export default function Head() {
       <meta name="twitter:title" content="L.B. Deyo, Designer" />
       <meta
         name="twitter:image"
-        content={ogImage}
+        content={OG_IMAGE.url}
       />
       {/* Google tag (gtag.js) */}
       <Script

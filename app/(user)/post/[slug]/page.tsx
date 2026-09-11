@@ -27,6 +27,9 @@ export async function generateMetadata({ params }: { params: DeferredParams }): 
       openGraph: {
         title,
         description,
+        type: "article",
+        url: `https://lbdeyo.com/post/${slug}`,
+        siteName: "L.B. Deyo",
         images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: OG_IMAGE.alt, type: OG_IMAGE.type }],
       },
       twitter: {

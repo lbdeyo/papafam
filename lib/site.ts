@@ -10,7 +10,7 @@ export const SITE = {
 };
 
 export const OG_IMAGE = {
-  url: "/seo/og-image.jpg",
+  url: "https://lbdeyo.com/seo/og-image.jpg",
   width: 1200,
   height: 630,
   alt: "L.B. Deyo, Designer",

@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "L.B. Deyo — Portfolio",
     description: "Web design and full‑stack development with motion graphics, video, print, and illustration.",
+    type: "website",
+    url: "https://lbdeyo.com",
+    siteName: "L.B. Deyo",
     images: [
       {
         url: OG_IMAGE.url,

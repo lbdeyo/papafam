@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About — L.B. Deyo",
     description: "Designer and front‑end developer focused on performance and UX.",
+    type: "website",
+    url: "https://lbdeyo.com/about",
+    siteName: SITE.name,
     images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: OG_IMAGE.alt, type: OG_IMAGE.type }],
   },
   twitter: {

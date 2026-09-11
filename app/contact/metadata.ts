@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Contact — L.B. Deyo",
         description: "Start your project: web design, development, motion graphics, and more.",
+        type: "website",
+        url: "https://lbdeyo.com/contact",
+        siteName: "L.B. Deyo",
         images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: OG_IMAGE.alt, type: OG_IMAGE.type }],
     },
     twitter: {
