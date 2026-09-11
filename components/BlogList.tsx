@@ -1,10 +1,7 @@
 "use client";
 import { useState } from "react";
 import type { Post } from "../typings";
-import Image from "next/image";
 import urlFor from "../lib/urlFor";
-import ClientSideRoute from "./ClientSideRoute";
-import { motion } from "framer-motion";
 import PortfolioGrid from "./PortfolioGrid";
 import { BlogListFilter } from "./BlogListFilter";
 
@@ -12,10 +9,15 @@ type Props = {
   posts: Post[];
 };
 
+function categoryLabel(post: Post) {
+  const first = post.categories?.[0];
+  if (!first) return undefined;
+  return typeof first === "string" ? first : first.title;
+}
+
 export default function BlogList({ posts }: Props) {
   const [currentCategory, setCurrentCategory] = useState<string>("All");
 
-  // Ensure posts is always an array
   const safePosts = Array.isArray(posts) ? posts : [];
 
   const filteredPosts = safePosts.filter(
@@ -31,16 +33,23 @@ export default function BlogList({ posts }: Props) {
   safePosts.sort((a, b) => a.priority - b.priority);
 
   return (
-    <div id="portfolio" className="w-full fade-in-2 relative">
-      <div className="pb-4 mx-4 md:mx-0 relative">
-        <h1 className="text-3xl md:text-4xl font-semibold fade-in-4 z-10">Portfolio</h1>
+    <div id="work" className="relative w-full scroll-mt-24 fade-in-2">
+      <div className="relative mb-8 flex flex-col gap-6 border-b border-ivory/10 pb-6 md:mb-10 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-brass">
+            Selected work
+          </p>
+          <h2 className="mt-3 font-serif text-4xl tracking-tight text-ivory md:text-5xl">
+            Portfolio
+          </h2>
+        </div>
         <BlogListFilter
           currentCategory={currentCategory}
           setCurrentCategory={setCurrentCategory}
           posts={safePosts}
         />
       </div>
-      <div className="mx-2 md:mx-0 relative">
+      <div className="relative">
         {filteredPosts.length > 0 ? (
           <PortfolioGrid
             posts={filteredPosts.map((p) => ({
@@ -49,11 +58,12 @@ export default function BlogList({ posts }: Props) {
               excerpt: p.description,
               priority: p.priority,
               coverImage: urlFor(p.mainImage).url(),
+              category: categoryLabel(p),
             }))}
           />
         ) : (
-          <div className="col-span-full text-center py-10">
-            <p className="text-gray-400">No posts available at the moment.</p>
+          <div className="py-16 text-center">
+            <p className="text-ivory/50">No work in this category yet.</p>
           </div>
         )}
       </div>

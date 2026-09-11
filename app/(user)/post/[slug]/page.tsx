@@ -1,6 +1,7 @@
 import { client, staticClient } from "@/lib/sanity.client";
 import { groq } from "next-sanity";
 import Image from "next/image";
+import Link from "next/link";
 import urlFor from "@/lib/urlFor";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/RichTextComponents";
@@ -63,6 +64,12 @@ export async function generateStaticParams() {
   }
 }
 
+type Neighbor = {
+  title: string;
+  slug: { current: string };
+  mainImage?: Post["mainImage"];
+};
+
 export default async function Page({ params }: { params: DeferredParams }) {
   try {
     const { slug } = await params;
@@ -73,52 +80,106 @@ export default async function Page({ params }: { params: DeferredParams }) {
       categories[]-> 
     }`;
 
-    const post: Post = await client.fetch(query, { slug });
+    const neighborsQuery = groq`*[_type=='post']{title, slug, mainImage, priority} | order(priority asc)`;
+
+    const [post, neighbors]: [Post, Neighbor[]] = await Promise.all([
+      client.fetch(query, { slug }),
+      client.fetch(neighborsQuery),
+    ]);
 
     if (!post) {
       notFound();
     }
 
+    const currentIndex = neighbors.findIndex((item) => item.slug?.current === slug);
+    const nextProject =
+      currentIndex >= 0 ? neighbors[(currentIndex + 1) % neighbors.length] : null;
+    const showNext = nextProject && nextProject.slug?.current !== slug;
+
+    const categories =
+      post.categories
+        ?.map((category) => (typeof category === "string" ? category : category.title))
+        .filter(Boolean) ?? [];
+
     return (
       <div className="fade-in-2">
-        <section className="relative w-full">
-          <div className="w-full max-w-screen-lg mx-auto px-4 md:px-0 pt-20 md:pt-16 pb-10 grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-6">
-            {/* Hero image card */}
-            <div className="md:col-span-6 rounded-2xl overflow-hidden bg-black/40 border-2 border-black shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_20px_40px_-20px_rgba(0,0,0,0.85)]">
-              <div className="relative w-full h-[320px] sm:h-[420px] md:h-[520px]">
-                <Image
-                  className="object-cover"
-                  src={urlFor(post.mainImage).url()}
-                  alt={post.author.name}
-                  fill
-                  priority
-                />
-              </div>
-            </div>
-
-            {/* Title/Body card */}
-            <article className="md:col-span-6 rounded-2xl p-4 sm:p-6 md:p-8 bg-neutral-900 text-white border border-neutral-800 ring-1 ring-white/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">{post.title}</h1>
-              <div className="prose prose-invert prose-zinc max-w-none">
-                <PortableText value={post.body} components={RichTextComponents} />
-              </div>
-            </article>
-
-            {post.youtube && (
-              <div className="md:col-span-6 rounded-2xl p-4 sm:p-6 md:p-8 bg-neutral-900 text-white border border-neutral-800 ring-1 ring-white/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
-                <div className="video-container">
-                  <iframe
-                    width="560"
-                    height="315"
-                    src={post.youtube}
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share"
-                  ></iframe>
-                </div>
-              </div>
-            )}
+        <section className="relative w-full pt-20">
+          <div className="relative h-[48vh] min-h-[320px] w-full md:h-[62vh]">
+            <Image
+              className="object-cover object-top"
+              src={urlFor(post.mainImage).url()}
+              alt={post.title}
+              fill
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-ink/20" />
           </div>
         </section>
+
+        <div className="mx-auto w-full max-w-frame px-5 py-12 md:px-8 md:py-16">
+          <Link
+            href="/#work"
+            className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-ivory/55 hover:text-ivory"
+          >
+            ← All work
+          </Link>
+          {categories.length > 0 ? (
+            <p className="mt-8 text-[11px] uppercase tracking-[0.22em] text-brass">
+              {categories.join(" · ")}
+            </p>
+          ) : null}
+          <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[0.95] tracking-tight text-ivory sm:text-6xl md:text-7xl">
+            {post.title}
+          </h1>
+          {post.description ? (
+            <p className="mt-5 max-w-2xl text-lg text-ivory/65">{post.description}</p>
+          ) : null}
+
+          <article className="mx-auto mt-14 max-w-3xl text-lg leading-relaxed text-ivory/80">
+            <PortableText value={post.body} components={RichTextComponents} />
+          </article>
+
+          {post.youtube && (
+            <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-[1.75rem] border border-ivory/10">
+              <div className="video-container">
+                <iframe
+                  width="560"
+                  height="315"
+                  src={post.youtube}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share"
+                ></iframe>
+              </div>
+            </div>
+          )}
+
+          {showNext && nextProject ? (
+            <Link
+              href={`/post/${nextProject.slug.current}`}
+              className="group mt-20 flex flex-col overflow-hidden rounded-[1.75rem] border border-ivory/10 bg-ink-raised md:flex-row"
+            >
+              <div className="relative min-h-[220px] md:w-1/2">
+                {nextProject.mainImage ? (
+                  <Image
+                    src={urlFor(nextProject.mainImage).url()}
+                    alt={nextProject.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : null}
+              </div>
+              <div className="flex flex-1 flex-col justify-center p-8 md:p-12">
+                <p className="text-[11px] uppercase tracking-[0.22em] text-brass">Next project</p>
+                <p className="mt-4 font-serif text-3xl tracking-tight text-ivory md:text-5xl">
+                  {nextProject.title}
+                </p>
+                <p className="mt-4 text-[12px] uppercase tracking-[0.18em] text-ivory/60">
+                  View project →
+                </p>
+              </div>
+            </Link>
+          ) : null}
+        </div>
       </div>
     );
   } catch (error) {

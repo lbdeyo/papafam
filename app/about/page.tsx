@@ -1,15 +1,8 @@
-// ABOUT PAGE
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMagnifyingGlassChart,
-  faPenRuler,
-  faCode,
-  faPeopleArrows,
-} from "@fortawesome/free-solid-svg-icons";
-
+import Link from "next/link";
 import type { Metadata } from "next";
+import { CLIENTS, SITE } from "@/lib/site";
 
-export const revalidate = 60; //revalidate every 60 seconds
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "About",
@@ -27,87 +20,117 @@ export const metadata: Metadata = {
   },
 };
 
+const PROCESS = [
+  {
+    index: "01",
+    title: "Find the words people search",
+    body: "I start with Google Ads and Analytics to shape an SEO strategy and keyword set. The site is built to be found — targeting the language your audience already uses.",
+  },
+  {
+    index: "02",
+    title: "Design until it feels inevitable",
+    body: "Mockups and brand assets in Photoshop, Illustrator, or Figma. This phase captures the vision and builds in UX so the thing is intuitive before a line of code is written.",
+  },
+  {
+    index: "03",
+    title: "Build it in Next.js & React",
+    body: "Reusable components, fast rendering with SSR and static generation, and room to grow. The result is a site that behaves like a product, not a brochure.",
+  },
+  {
+    index: "04",
+    title: "Iterate in the open",
+    body: "Close collaboration, short loops, no surprises. Feedback lands while it can still change the work — so the finished site is actually yours.",
+  },
+];
+
 async function About() {
   return (
-    <div className="min-h-screen relative">
-      <section className="relative w-full">
-        <div className="w-full max-w-screen-lg mx-auto px-4 md:px-0 pt-20 md:pt-16 pb-10 mb-10 fade-in-2 grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-6 auto-rows-auto">
-          {/* Main Card */}
-          <div className="md:col-span-6 rounded-2xl p-4 sm:p-6 md:p-8 bg-[#FF0000] text-white border border-red-600 ring-1 ring-red-300/30 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl leading-tight break-words text-white mb-3">
-              About L.B. Deyo
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-white/95 space-y-3">
-              I&apos;m L.B. Deyo — a front-end developer, designer, and digital strategist with extensive experience bringing ideas to life online. My background spans web development, UX/UI design, and digital marketing, giving me the ability to design websites that are not only visually striking, but also optimized to perform. I&apos;ve worked with a wide range of tools and frameworks, from Adobe Creative Suite to modern JavaScript frameworks, to deliver sites that meet both aesthetic and business goals.
-            </p>
-          </div>
+    <div className="min-h-screen">
+      <section className="mx-auto w-full max-w-frame px-5 pb-16 pt-28 md:px-8 md:pb-24 md:pt-32">
+        <div className="fade-in-2">
+          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-brass">
+            About
+          </p>
+          <h1 className="mt-5 max-w-[16ch] font-serif text-5xl leading-[0.95] tracking-tight text-ivory md:text-7xl">
+            A designer who can also{" "}
+            <em className="text-ivory/70">ship the site.</em>
+          </h1>
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ivory/70 md:text-xl">
+            I&apos;m {SITE.name} — a front-end developer, designer, and digital
+            strategist. I&apos;ve made work for {CLIENTS.slice(0, -1).join(", ")}, and{" "}
+            {CLIENTS[CLIENTS.length - 1]}. Now it&apos;s time to tell yours.
+          </p>
+        </div>
 
-          {/* Card 2: Website Creation System */}
-          <div className="md:col-span-6 rounded-2xl p-4 sm:p-6 md:p-8 bg-neutral-900 text-white border border-neutral-800 ring-1 ring-white/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
-            <h2 className="text-2xl md:text-3xl font-semibold">My Website Creation System</h2>
-            <p className="mt-3 text-white/90">
-              Every website I build follows a proven, results-driven process designed to ensure the final product is beautiful, functional, and easy for your audience to find:
-            </p>
-            <ul className="mt-4 space-y-4 list-none pl-0">
-              <li>
-                <div className="flex items-start gap-3">
-                  <span className="mt-1 text-[40px] md:text-[48px] leading-none shrink-0 text-white/90">
-                    <FontAwesomeIcon icon={faMagnifyingGlassChart} />
-                  </span>
-                  <div>
-                    <span className="font-semibold">Keyword & SEO Optimization.</span>
-                    <span className="block text-white/90"> I start by using tools like Google Ads and Google Analytics to identify the right SEO strategy and keyword set. This ensures your site is built on a foundation of discoverability from day one, targeting the exact terms your audience is searching for.</span>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="flex items-start gap-3">
-                  <span className="mt-1 text-[40px] md:text-[48px] leading-none shrink-0 text-white/90">
-                    <FontAwesomeIcon icon={faPenRuler} />
-                  </span>
-                  <div>
-                    <span className="font-semibold">Design & Mockups.</span>
-                    <span className="block text-white/90"> Once the SEO plan is in place, I create polished mockups and brand assets in Photoshop, Illustrator, or Figma. This design phase captures your vision while incorporating UX best practices to make the site intuitive and engaging.</span>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="flex items-start gap-3">
-                  <span className="mt-1 text-[40px] md:text-[48px] leading-none shrink-0 text-white/90">
-                    <FontAwesomeIcon icon={faCode} />
-                  </span>
-                  <div>
-                    <span className="font-semibold">Development in Next.js & React.</span>
-                    <ul className="mt-2 list-disc pl-5 space-y-1 text-white/90">
-                      <li>Reusable components for consistent design and easier maintenance</li>
-                      <li>Dynamic, interactive interfaces for a more engaging user experience</li>
-                      <li>Fast rendering with server-side rendering (SSR) and static site generation (SSG) for speed and SEO benefits</li>
-                      <li>Scalability for future growth and feature expansion</li>
-                      <li>State management for smooth, app-like interactions</li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="flex items-start gap-3">
-                  <span className="mt-1 text-[40px] md:text-[48px] leading-none shrink-0 text-white/90">
-                    <FontAwesomeIcon icon={faPeopleArrows} />
-                  </span>
-                  <div>
-                    <span className="font-semibold">Iterative Collaboration.</span>
-                    <span className="block text-white/90"> Throughout the process, I work iteratively and in close consultation with you. This ensures feedback is incorporated quickly, surprises are avoided, and the final website truly matches your needs and vision.</span>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
+        <div className="mt-16 grid gap-4 md:mt-24 md:grid-cols-12 md:gap-5">
+          <article className="rounded-[1.75rem] border border-ivory/10 bg-ink-raised p-7 md:col-span-7 md:p-10">
+            <h2 className="font-serif text-3xl tracking-tight text-ivory md:text-4xl">
+              The whole stack, one studio
+            </h2>
+            <div className="mt-6 space-y-5 text-base leading-relaxed text-ivory/70 md:text-lg">
+              <p>
+                My background spans web development, UX/UI, and digital marketing.
+                That mix means the work is visually striking <em>and</em> built to
+                perform — found, fast, and easy to use.
+              </p>
+              <p>
+                I move between Adobe Creative Suite and modern JavaScript
+                frameworks without treating either as a specialty silo. Design
+                decisions survive contact with code. Code is held to the same
+                standard as the comps.
+              </p>
+            </div>
+          </article>
 
-          {/* Card 3: Closing statement */}
-          <div className="md:col-span-6 rounded-2xl p-4 sm:p-6 md:p-8 bg-[#2c3a24] text-white border border-[#3a4a2e] ring-1 ring-white/5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.7)]">
-            <p className="text-white/95">
-              With this system, you don’t just get a website — you get a digital platform designed for visibility, usability, and long-term success.
+          <aside className="rounded-[1.75rem] border border-ivory/10 bg-ember p-7 text-white md:col-span-5 md:p-10">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-white/70">
+              Certifications
             </p>
-          </div>
+            <p className="mt-5 font-serif text-2xl leading-snug md:text-3xl">
+              Meta Certified in JavaScript, HTML &amp; CSS, and Advanced React.
+            </p>
+            <p className="mt-4 font-serif text-2xl leading-snug text-white/85 md:text-3xl">
+              Google Certified in Ads and Analytics.
+            </p>
+          </aside>
+        </div>
+
+        <div className="mt-20 md:mt-28">
+          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-brass">
+            Process
+          </p>
+          <h2 className="mt-3 font-serif text-4xl tracking-tight text-ivory md:text-5xl">
+            How a site gets made
+          </h2>
+          <ol className="mt-10 grid gap-4 md:grid-cols-2 md:gap-5">
+            {PROCESS.map((step) => (
+              <li
+                key={step.index}
+                className="rounded-[1.75rem] border border-ivory/10 bg-ink-raised p-7 md:p-8"
+              >
+                <p className="font-serif text-sm italic text-brass">{step.index}</p>
+                <h3 className="mt-4 font-serif text-2xl tracking-tight text-ivory">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ivory/60 md:text-base">
+                  {step.body}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="mt-16 rounded-[1.75rem] border border-ivory/10 bg-ink-raised px-7 py-10 md:mt-20 md:px-12 md:py-14">
+          <p className="max-w-3xl font-serif text-2xl leading-snug tracking-tight text-ivory md:text-3xl">
+            You don&apos;t just get a website. You get a platform designed for
+            visibility, usability, and a long life.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-8 inline-flex items-center rounded-full bg-ivory px-6 py-3 text-[12px] font-medium uppercase tracking-[0.18em] text-ink transition-colors hover:bg-white"
+          >
+            Let&apos;s get started
+          </Link>
         </div>
       </section>
     </div>

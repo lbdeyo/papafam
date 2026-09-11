@@ -1,8 +1,6 @@
-
 import BlogList from "@/components/BlogList";
 import type { Metadata } from "next";
 import Jumbotron from "@/components/Jumbotron";
-// import ShowreelVideo from "@/components/ShowreelVideo";
 import { groq } from "next-sanity";
 import { client } from "@/lib/sanity.client";
 
@@ -36,21 +34,20 @@ const query = groq`
   } | order(priority asc)
 `;
 
-export default async function TestPage() {
+export default async function HomePage() {
   let posts = [];
 
   try {
     posts = await client.fetch(query);
   } catch (error) {
     console.error("Error fetching posts:", error);
-    // Continue with empty posts array if fetch fails
   }
 
   return (
-    <div className="min-h-screen relative">
-      <div className="relative w-full">
-        <div className="w-full max-w-screen-lg mx-auto px-4 md:px-0 py-6 md:py-10">
-          <Jumbotron />
+    <div className="min-h-screen">
+      <div className="mx-auto w-full max-w-frame px-5 pb-16 pt-24 md:px-8 md:pb-24 md:pt-28">
+        <Jumbotron />
+        <div className="mt-20 md:mt-28">
           <BlogList posts={posts} />
         </div>
       </div>

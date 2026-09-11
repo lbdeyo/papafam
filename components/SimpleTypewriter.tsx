@@ -24,7 +24,7 @@ export default function SimpleTypewriter({
     const safeWords = useMemo(() => (Array.isArray(words) && words.length > 0 ? words : ['']), [words]);
 
     const [wordIndex, setWordIndex] = useState(0);
-    const [displayed, setDisplayed] = useState('');
+    const [displayed, setDisplayed] = useState(safeWords[0] ?? '');
     const [isDeleting, setIsDeleting] = useState(false);
 
     useEffect(() => {

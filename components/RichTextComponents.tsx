@@ -1,62 +1,60 @@
-import Image from "next/image";
 import Link from "next/link";
 import urlFor from "@/lib/urlFor";
 
 export const RichTextComponents = {
   types: {
-    image: ({value}: any) => {
+    image: ({ value }: any) => {
       return (
-        <div
-          className="relative  my-3
-          md:my-5 left-0 mx-auto ">
+        <div className="relative my-10 overflow-hidden rounded-2xl">
           <img
-            className=" object-contain"
+            className="h-auto w-full object-contain"
             src={urlFor(value).url()}
-            alt="Blog Post Image"
+            alt="Project image"
           />
         </div>
       );
     },
   },
   list: {
-    bullet: ({children}: any) => (
-      <ul className="ml-10 py-5 list-disc space-y-5 shadow">{children}</ul>
+    bullet: ({ children }: any) => (
+      <ul className="my-6 ml-6 list-disc space-y-3 text-ivory/75">{children}</ul>
     ),
-    number: ({children}: any) => (
-      <ol className="mt-lg list-decimal shadow">{children}</ol>
+    number: ({ children }: any) => (
+      <ol className="my-6 ml-6 list-decimal space-y-3 text-ivory/75">{children}</ol>
     ),
   },
   block: {
-    h1: ({children}: any) => (
-      <h1 className="text-5xl py-10 font-bold shadow">{children}</h1>
+    h1: ({ children }: any) => (
+      <h1 className="mb-6 mt-12 font-serif text-4xl tracking-tight text-ivory">{children}</h1>
     ),
-    h2: ({children}: any) => (
-      <h2 className="text-4xl py-10 font-bold shadow">{children}</h2>
+    h2: ({ children }: any) => (
+      <h2 className="mb-5 mt-12 font-serif text-3xl tracking-tight text-ivory">{children}</h2>
     ),
-    h3: ({children}: any) => (
-      <h3 className="text-3xl py-10 font-bold shadow">{children}</h3>
+    h3: ({ children }: any) => (
+      <h3 className="mb-4 mt-10 font-serif text-2xl tracking-tight text-ivory">{children}</h3>
     ),
-    h4: ({children}: any) => (
-      <h4 className="text-2xl py-10 font-bold shadow">{children}</h4>
+    h4: ({ children }: any) => (
+      <h4 className="mb-3 mt-8 font-serif text-xl tracking-tight text-ivory">{children}</h4>
     ),
-
-    blockquote: ({children}: any) => (
-      <blockquote className="border-l-[#ffae00] border-l-4 pl-5 py-5 my-5 shadow">
+    normal: ({ children }: any) => (
+      <p className="mb-5 text-ivory/75">{children}</p>
+    ),
+    blockquote: ({ children }: any) => (
+      <blockquote className="my-8 border-l-2 border-brass pl-5 font-serif text-xl italic text-ivory/85">
         {children}
       </blockquote>
     ),
   },
   marks: {
-    link: ({children, value}: any) => {
-      const rel = !value.href.startsWith("/")
-        ? "noreferrer noopener"
-        : undefined;
+    link: ({ children, value }: any) => {
+      const rel = !value.href.startsWith("/") ? "noreferrer noopener" : undefined;
 
       return (
         <Link
           href={value.href}
           rel={rel}
-          className=" decoration-[#ffae00] hover:decoration-black">
+          className="text-ivory underline decoration-brass/70 underline-offset-4 transition-colors hover:decoration-ivory"
+        >
           {children}
         </Link>
       );
