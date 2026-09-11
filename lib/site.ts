@@ -8,6 +8,13 @@ export const SITE = {
     "Full-service web design and development. Motion graphics, video, print, and illustration.",
 };
 
+export const OG_IMAGE = {
+  url: "/seo/social-preview-image.jpg",
+  width: 1280,
+  height: 720,
+  alt: "L.B. Deyo, Designer",
+};
+
 export const NAV = [
   { href: "/#work", label: "Work" },
   { href: "/about", label: "About" },

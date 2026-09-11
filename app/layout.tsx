@@ -6,6 +6,7 @@ import React from "react";
 import Script from "next/script";
 import type { Metadata } from "next";
 import { Instrument_Sans, Instrument_Serif } from "next/font/google";
+import { OG_IMAGE } from "@/lib/site";
 
 const sans = Instrument_Sans({
   subsets: ["latin"],
@@ -62,7 +63,10 @@ export const metadata: Metadata = {
     siteName: "L.B. Deyo",
     images: [
       {
-        url: "/seo/social-preview-image.jpg",
+        url: OG_IMAGE.url,
+        width: OG_IMAGE.width,
+        height: OG_IMAGE.height,
+        alt: OG_IMAGE.alt,
       },
     ],
   },
@@ -71,7 +75,7 @@ export const metadata: Metadata = {
     title: "L.B. Deyo, Designer",
     description:
       "Full service web design and full‑stack development. Motion graphics, video, print, and illustration.",
-    images: ["/seo/social-preview-image.jpg"],
+    images: [OG_IMAGE.url],
   },
   icons: {
     icon: "/favicon.ico",

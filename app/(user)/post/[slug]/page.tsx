@@ -8,6 +8,7 @@ import { RichTextComponents } from "@/components/RichTextComponents";
 import type { Post } from "@/typings";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { OG_IMAGE } from "@/lib/site";
 
 type DeferredParams = Promise<{ slug: string }>;
 
@@ -20,28 +21,27 @@ export async function generateMetadata({ params }: { params: DeferredParams }): 
     const data = await client.fetch(query, { slug });
     const title = data?.title ? `${data.title} — L.B. Deyo` : "Post — L.B. Deyo";
     const description = data?.description || "Portfolio project";
-    const imageUrl = data?.mainImage ? urlFor(data.mainImage).url() : "/seo/social-preview-image.jpg";
     return {
       title,
       description,
       openGraph: {
         title,
         description,
-        images: [{ url: imageUrl }],
+        images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: OG_IMAGE.alt }],
       },
       twitter: {
         card: "summary_large_image",
         title,
         description,
-        images: [imageUrl],
+        images: [OG_IMAGE.url],
       },
     };
   } catch {
     return {
       title: "Post — L.B. Deyo",
       description: "Portfolio project",
-      openGraph: { images: [{ url: "/seo/social-preview-image.jpg" }] },
-      twitter: { card: "summary_large_image", images: ["/seo/social-preview-image.jpg"] },
+      openGraph: { images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: OG_IMAGE.alt }] },
+      twitter: { card: "summary_large_image", images: [OG_IMAGE.url] },
     };
   }
 }
